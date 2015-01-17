@@ -16,19 +16,19 @@ endif
 ifdef BLISS_RELEASE
     BLISS_BUILDTYPE := RELEASE
 endif
-# Set Unofficial if no buildtype set (Buildtype should ONLY be set by BLISS Devs!)
+# Set GamerMod if no buildtype set (Buildtype should ONLY be set by BLISS Devs!)
 ifdef BLISS_BUILDTYPE
 else
-    BLISS_BUILDTYPE := UNOFFICIAL
+    BLISS_BUILDTYPE := GamerMod
     BLISS_VERSION_MAJOR := 1
     BLISS_VERSION_MINOR := 7
 endif
 
 # Set BLISS version
 ifdef BLISS_RELEASE
-    BLISS_VERSION := "Blisspop-v"$(VERSION) 
+    BLISS_VERSION := "BlisspopGM-v"$(VERSION) 
 else
-    BLISS_VERSION := "BlissPop-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)"-$(shell date +%Y%m%d-%H%M)
+    BLISS_VERSION := "BlissPopGM-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)"-$(shell date +%Y%m%d-%H%M)
 endif
 
 BLISS_DISPLAY_VERSION := $(VERSION)
