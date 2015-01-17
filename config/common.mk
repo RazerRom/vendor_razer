@@ -154,8 +154,6 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
-    Trebuchet \
     AudioFX \
     CMWallpapers \
     CMFileManager \
@@ -166,8 +164,7 @@ PRODUCT_PACKAGES += \
     OmniSwitch \
     MonthCalendarWidget \
     BlissPapers \
-    DeviceControl \
-    CameraNext
+    DeviceControl
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
