@@ -258,3 +258,8 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 -include vendor/cyngn/product.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
+
+# BeanStalkGM Extras
+# Nova Launcher
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/app/NovaLauncher_3.3.apk:system/priv-app/NovaLauncher/NovaLauncher_3.3.apk
