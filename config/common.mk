@@ -160,7 +160,8 @@ PRODUCT_PACKAGES += \
     OmniSwitch \
     MonthCalendarWidget \
     BlissPapers \
-    DeviceControl
+    DeviceControl \
+    DeepDarkness
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
