@@ -159,9 +159,7 @@ PRODUCT_PACKAGES += \
     CMHome \
     OmniSwitch \
     MonthCalendarWidget \
-    BlissPapers \
-    DeviceControl \
-    DeepDarkness
+    BlissPapers
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
