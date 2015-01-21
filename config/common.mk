@@ -151,7 +151,6 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     AudioFX \
-    CMWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
