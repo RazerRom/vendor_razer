@@ -154,9 +154,7 @@ PRODUCT_PACKAGES += \
     CMAccount \
     CMHome \
     OmniSwitch \
-    MonthCalendarWidget \
-    BlissPapers \
-    CyanogenSetupWizard
+    BlissPapers
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
