@@ -249,4 +249,4 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 # BeanStalkGM Extras
 # Nova Launcher
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/app/NovaLauncher_3.3.apk:system/priv-app/NovaLauncher/NovaLauncher_3.3.apk
+    vendor/bliss/prebuilt/common/app/NovaLauncher.apk:system/priv-app/NovaLauncher/NovaLauncher.apk
