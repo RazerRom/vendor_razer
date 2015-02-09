@@ -266,6 +266,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.profiler=1 \
     dalvik.vm.isa.arm.features=lpae,div
 
+# L Speed
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/KernelTweaks.log:data/Tweaks/KernelTweaks.log \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/ram_manager.log:data/Tweaks/ram_manager.log \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/Seeder_v7.log:data/Tweaks/Seeder_v7.log \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/zipalign.log:data/Tweaks/zipalign.log \
+    vendor/bliss/prebuilt/common/L_speed/system/bin/seeder:system/bin/seeder \
+    vendor/bliss/prebuilt/common/L_speed/system/bin/uninstaller:system/bin/uninstaller \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/01kernelTweaks:system/etc/init.d/01kernelTweaks \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02zipalign:system/etc/init.d/02zipalign \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/03ram_manager:system/etc/init.d/03ram_manager \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/Seeder:system/etc/init.d/Seeder \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/seeder_scripts/Seeder:system/etc/seeder_scripts/Seeder \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/entro:system/xbin/entro \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
+
 # Nova Launcher
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/app/NovaLauncher.apk:system/priv-app/NovaLauncher/NovaLauncher.apk
