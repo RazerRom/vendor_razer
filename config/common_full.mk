@@ -9,17 +9,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
 
 # Optional Bliss packages
 PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
     LiveWallpapers \
     LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
-    VisualizationWallpapers \
-    PhotoTable \
-    SoundRecorder \
-    PhotoPhase
+    SoundRecorder
 
 # Extra tools in Bliss
 PRODUCT_PACKAGES += \

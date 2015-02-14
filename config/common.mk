@@ -142,19 +142,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     VoicePlus \
     Basic \
-    libemoji \
-    Terminal
+    libemoji
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
     AudioFX \
-    CMFileManager \
     Eleven \
     LockClock \
-    CMAccount \
-    CMHome \
     OmniSwitch \
-    BlissPapers
+    BlissPapers \
+    Terminal
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
