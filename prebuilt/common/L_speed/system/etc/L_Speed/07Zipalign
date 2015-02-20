@@ -6,32 +6,32 @@ RUN_EVERY=108000
 
 #Zipalign /Data 
 
-LOG=/data/Tweaks/zipalign.log
+LS=/data/L_Speed/Logs/07Zipalign.log
 ZIPALIGNDB=/data/zipalign.db
 
-if [ -e $LOG ]; then
-	rm $LOG;
+if [ -e $LS ]; then
+	rm $LS;
 fi;
 
 if [ ! -f $ZIPALIGNDB ]; then
 	touch $ZIPALIGNDB;
 fi;
 
-echo "# L Speed log" | tee -a $LOG
-echo "" | tee -a $LOG
-echo "Starting Automatic ZipAlign $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG
+echo "# L Speed log" | tee -a $LS
+echo "" | tee -a $LS
+echo "Starting Automatic ZipAlign $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LS
 for DIR in /data/app ; do
   cd $DIR
   for APK in *.apk ; do
     if [ $APK -ot $ZIPALIGNDB ] && [ $(grep "$DIR/$APK" $ZIPALIGNDB|wc -l) -gt 0 ] ; then
-      echo "Already checked: $DIR/$APK" | tee -a $LOG
+      echo "Already checked: $DIR/$APK" | tee -a $LS
     else
       zipalign -c 4 $APK
       if [ $? -eq 0 ] ; then
-        echo "Already aligned: $DIR/$APK" | tee -a $LOG
+        echo "Already aligned: $DIR/$APK" | tee -a $LS
         grep "$DIR/$APK" $ZIPALIGNDB > /dev/null || echo $DIR/$APK >> $ZIPALIGNDB
       else
-        echo "Now aligning: $DIR/$APK" | tee -a $LOG
+        echo "Now aligning: $DIR/$APK" | tee -a $LS
         zipalign -f 4 $APK /cache/$APK
         busybox mount -o rw,remount /system
         cp -f -p /cache/$APK $APK
@@ -49,14 +49,14 @@ for DIR in /system/app ; do
   cd $DIR
   for APK in *.apk ; do
     if [ $APK -ot $ZIPALIGNDB ] && [ $(grep "$DIR/$APK" $ZIPALIGNDB|wc -l) -gt 0 ] ; then
-      echo "Already checked: $DIR/$APK" | tee -a $LOG
+      echo "Already checked: $DIR/$APK" | tee -a $LS
     else
       zipalign -c 4 $APK
       if [ $? -eq 0 ] ; then
-        echo "Already aligned: $DIR/$APK" | tee -a $LOG
+        echo "Already aligned: $DIR/$APK" | tee -a $LS
         grep "$DIR/$APK" $ZIPALIGNDB > /dev/null || echo $DIR/$APK >> $ZIPALIGNDB
       else
-        echo "Now aligning: $DIR/$APK" | tee -a $LOG
+        echo "Now aligning: $DIR/$APK" | tee -a $LS
         zipalign -f 4 $APK /cache/$APK
         busybox mount -o rw,remount /system
         cp -f -p /cache/$APK $APK
@@ -72,14 +72,14 @@ for DIR in /system/priv-app ; do
   cd $DIR
   for APK in *.apk ; do
     if [ $APK -ot $ZIPALIGNDB ] && [ $(grep "$DIR/$APK" $ZIPALIGNDB|wc -l) -gt 0 ] ; then
-      echo "Already checked: $DIR/$APK" | tee -a $LOG
+      echo "Already checked: $DIR/$APK" | tee -a $LS
     else
       zipalign -c 4 $APK
       if [ $? -eq 0 ] ; then
-        echo "Already aligned: $DIR/$APK" | tee -a $LOG
+        echo "Already aligned: $DIR/$APK" | tee -a $LS
         grep "$DIR/$APK" $ZIPALIGNDB > /dev/null || echo $DIR/$APK >> $ZIPALIGNDB
       else
-        echo "Now aligning: $DIR/$APK" | tee -a $LOG
+        echo "Now aligning: $DIR/$APK" | tee -a $LS
         zipalign -f 4 $APK /cache/$APK
         busybox mount -o rw,remount /system
         cp -f -p /cache/$APK $APK
@@ -95,14 +95,14 @@ for DIR in /system/framework ; do
   cd $DIR
   for APK in *.apk ; do
     if [ $APK -ot $ZIPALIGNDB ] && [ $(grep "$DIR/$APK" $ZIPALIGNDB|wc -l) -gt 0 ] ; then
-      echo "Already checked: $DIR/$APK" | tee -a $LOG
+      echo "Already checked: $DIR/$APK" | tee -a $LS
     else
       zipalign -c 4 $APK
       if [ $? -eq 0 ] ; then
-        echo "Already aligned: $DIR/$APK" | tee -a $LOG
+        echo "Already aligned: $DIR/$APK" | tee -a $LS
         grep "$DIR/$APK" $ZIPALIGNDB > /dev/null || echo $DIR/$APK >> $ZIPALIGNDB
       else
-        echo "Now aligning: $DIR/$APK" | tee -a $LOG
+        echo "Now aligning: $DIR/$APK" | tee -a $LS
         zipalign -f 4 $APK /cache/$APK
         busybox mount -o rw,remount /system
         cp -f -p /cache/$APK $APK
@@ -115,4 +115,4 @@ for DIR in /system/framework ; do
 done
 
 touch $ZIPALIGNDB
-echo "Automatic ZipAlign finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LOG
+echo "Automatic ZipAlign finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $LS

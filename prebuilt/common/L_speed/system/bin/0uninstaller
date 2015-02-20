@@ -12,26 +12,32 @@ sleep 3
    echo ""
    echo "Mounting /system partition..."
 sleep 1
+busybox mount -o remount,rw /
+busybox mount -o remount,rw rootfs
 busybox mount -o remount,rw /system
    echo ""
    echo "Removing scripts,please wait..."
 sleep 5
 
-busybox rm -rf /data/Tweaks
-busybox rm -rf /system/etc/seeder_scripts
-busybox rm -f /system/etc/init.d/01kernelTweak
-busybox rm -f /system/etc/init.d/01kernelTweaks
-busybox rm -f /system/etc/init.d/02zipalign
-busybox rm -f /system/etc/init.d/03ram_manager
-busybox rm -f /system/etc/init.d/04fstrim
-busybox rm -f /system/etc/init.d/Seeder
+busybox rm -rf /data/L_Speed
+busybox rm -rf /system/etc/L_Speed
+busybox rm -f /system/etc/init.d/00init.d_check
+busybox rm -f /system/etc/init.d/01Seeder
+busybox rm -f /system/etc/init.d/02VM_tweaks
+busybox rm -f /system/etc/init.d/03Ram_manager
+busybox rm -f /system/etc/init.d/04Cleaner
+busybox rm -f /system/etc/init.d/05Net_tweaks
+busybox rm -f /system/etc/init.d/06SD_tweak
+busybox rm -f /system/etc/init.d/07Zipalign
 
    echo ""
    echo "Removing binaries and libraries,please wait..."
 sleep 5
 
-
-busybox rm -f /system/bin/seeder
+busybox rm -f /system/bin/0L_Wizard
+busybox rm -f /system/bin/0L-check
+busybox rm -f /system/bin/0seeder
+busybox rm -f /system/bin/L_Speed
 busybox rm -f /system/xbin/openvpn
 busybox rm -f /system/xbin/zipalign
 busybox rm -f /system/xbin/rngd

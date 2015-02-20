@@ -1,0 +1,10 @@
+busybox clear
+busybox echo "V1.0 REBORN (initial release)"
+busybox echo ""
+busybox echo ""
+busybox sleep 1
+busybox echo "V1.1"
+busybox echo "-Optimized"
+busybox echo "-New VM values"
+busybox echo "-Added Enable all in L Speed wizard"
+busybox echo ""

@@ -1,0 +1,68 @@
+#!/system/bin/sh
+
+#Interval between cleaner runs,in seconds, 172800=48 hours
+RUN_EVERY=172800
+
+
+LS=/data/L_Speed/Logs/04Cleaner.log
+
+busybox rm -f $LS
+busybox touch $LS
+
+echo "# L Speed log" | tee -a $LS
+echo "" | tee -a $LS
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) Cleaner script is running..." | tee -a $LS;
+
+
+busybox mount -o remount,rw rootfs
+busybox mount -o remount,rw /system
+
+
+# cleaner
+busybox rm -f /data/anr/*.*
+busybox rm -f /data/cache/*.*
+busybox rm -f /data/local/tmp/*.*
+busybox rm -f /data/mlog/*
+busybox rm -f /data/tombstones/*
+busybox rm -f /data/backup/pending/*
+busybox rm -f /data/system/dropbox/*
+busybox chmod 700 /data/system/dropbox
+busybox rm -f /data/system/usagestats/*
+busybox chmod 700 /data/system/usagestats
+busybox rm -f /data/system/usagestats/*;
+busybox rm -f /dev/log/*;
+busybox rm -f /data/*.log;
+busybox rm -f /data/*.txt;
+busybox rm -f /data/log/*.log;
+busybox rm -f /data/log/*.txt;
+
+export sampling_rate=10000
+export up_threshold=80
+
+
+echo "memory cleaner--------[OK]" | tee -a $LS;
+
+if [ -e /data/anr/*.* ]; then
+  echo "-anr not cleaned" | tee -a $LS; else
+  echo "-anr cleaned" | tee -a $LS
+fi;
+if [ -e /data/local/tmp/*.* ]; then
+  echo "-local/tmp not cleaned" | tee -a $LS; else
+  echo "-local/tmp cleaned" | tee -a $LS
+fi;
+if [ -e /data/cache/*.* ]; then
+  echo "-cache not cleaned" | tee -a $LS; else
+  echo "-cache cleaned" | tee -a $LS
+fi;
+if [ -e /data/last_log/*.* ]; then
+  echo "-log not cleaned" | tee -a $LS; else
+  echo "-log cleaned" | tee -a $LS
+fi;
+if [ -e /data/tombstones/*.* ]; then
+  echo "-tombstones not cleaned" | tee -a $LS; else
+  echo "-tombstones cleaned" | tee -a $LS
+fi;
+
+
+echo "" | tee -a $LS
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) All junk directories are now cleaned,Thanks to -CALIBAN666@XDA-!" | tee -a $LS;

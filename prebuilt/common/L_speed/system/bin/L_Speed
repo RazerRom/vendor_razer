@@ -1,0 +1,108 @@
+#!/system/bin/sh
+busybox clear
+busybox echo "         ....   "
+busybox echo "        /   /       "
+busybox echo "       /   /         "
+busybox echo "      /   /                "
+busybox echo "     /   /_._._.            "
+busybox echo "    /_._._._._./   SPEED    MOD"
+busybox echo "*-*-*-*-*-*--*-*-*-*--*-*-*-*-*-*-*-*-*"
+busybox echo "      Feel smoothness"
+busybox echo "                                       "
+busybox sleep 1
+busybox echo ""
+busybox echo "1. Check L Speed..."
+busybox echo "================"
+busybox echo "2. L Speed WIZARD..."
+busybox echo "================"
+busybox echo "3. CHANGELOG..."
+busybox echo "================"
+busybox echo "4. Uninstall L Speed..."
+busybox echo "================"
+busybox echo "5. Reboot device NOW"
+busybox echo "================"
+busybox echo ""
+busybox echo ""
+busybox echo -n "Now choose:   "            
+read character
+case $character in 
+1) busybox clear;
+sh system/bin/0L-check
+busybox echo ""
+busybox sleep 2
+busybox echo ""
+busybox echo -n "# Go back to menu...?
+[ Yes = 1 | No = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+busybox echo ""
+busybox echo "#Exiting from mod menu"
+busybox sleep 1
+exit
+else
+busybox echo ""
+sh system/bin/L_Speed
+busybox sleep 1
+fi
+busybox clear ;;
+
+2) busybox clear;
+sh system/bin/0L_Wizard
+busybox clear ;;
+
+3) busybox clear;
+sh system/etc/L_Speed/00changelog
+busybox echo ""
+busybox sleep 2
+busybox echo ""
+busybox echo -n "# Go back to menu...?
+[ Yes = 1 | No = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+busybox echo ""
+busybox echo "#Exiting from mod menu"
+busybox sleep 1
+exit
+else
+busybox echo ""
+sh system/bin/L_Speed
+busybox sleep 1
+fi
+busybox clear ;;
+
+4) busybox clear;
+sh system/bin/0uninstaller
+busybox echo ""
+busybox sleep 2
+busybox echo ""
+busybox echo -n "# Go back to menu...?
+[ Yes = 1 | No = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+busybox echo ""
+busybox echo "#Exiting from mod menu"
+busybox sleep 1
+exit
+else
+busybox echo ""
+sh system/bin/L_Speed
+busybox sleep 1
+fi
+busybox clear ;;
+
+5) busybox clear;
+busybox echo "3"
+busybox sleep 1
+busybox echo "2"
+busybox sleep 1
+busybox echo "1"
+busybox sleep 1
+reboot
+busybox clear ;;
+
+*) busybox clear;
+busybox echo "#Exit,Invalid Option"
+sleep 1
+esac
+echo ""
+exit

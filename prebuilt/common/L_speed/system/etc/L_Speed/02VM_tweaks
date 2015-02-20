@@ -1,0 +1,45 @@
+#!/system/bin/sh
+
+LS=/data/L_Speed/Logs/02VM_tweaks.log
+
+busybox rm -f $LS
+busybox touch $LS
+
+echo "# L Speed log" | tee -a $LS
+echo "" | tee -a $LS
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) Adding VM tweaks..." | tee -a $LS;
+
+
+busybox mount -o remount,rw rootfs
+busybox mount -o remount,rw /system
+
+
+busybox sysctl -e -w vm.block_dump=0
+busybox sysctl -e -w vm.dirty_background_ratio=5
+busybox sysctl -e -w vm.dirty_expire_centisecs=1000
+busybox sysctl -e -w vm.dirty_ratio=15
+busybox sysctl -e -w vm.dirty_writeback_centisecs=2000
+busybox sysctl -e -w vm.drop_caches=0
+busybox sysctl -e -w vm.extfrag_threshold=500
+busybox sysctl -e -w vm.extra_free_kbytes=4500
+busybox sysctl -e -w vm.laptop_mode=0
+busybox sysctl -e -w vm.lowmem_reserve_ratio=32
+busybox sysctl -e -w vm.max_map_count=65530
+busybox sysctl -e -w vm.min_free_kbytes=4096
+busybox sysctl -e -w vm.min_free_order_shift=4
+busybox sysctl -e -w vm.mmap_min_addr=32768
+busybox sysctl -e -w vm.pdflush_threads=0
+busybox sysctl -e -w vm.oom_dump_tasks=1
+busybox sysctl -e -w vm.oom_kill_allocating_task=0
+busybox sysctl -e -w vm.overcommit_memory=1
+busybox sysctl -e -w vm.overcommit_ratio=50
+busybox sysctl -e -w vm.page_cluster=0
+busybox sysctl -e -w vm.panic_on_oom=0
+busybox sysctl -e -w vm.percpu_pagelist_fraction=0
+busybox sysctl -e -w vm.scan_unevictable_pages=0
+busybox sysctl -e -w vm.swappiness=60
+busybox sysctl -e -w vm.vfs_cache_pressure=50
+
+echo "" | tee -a $LS
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) VM tweaks applied" | tee -a $LS;
+

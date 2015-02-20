@@ -1,0 +1,279 @@
+#!/system/bin/sh
+#L Speed wizard by Paget96@xda
+
+busybox mount -o remount,rw /
+busybox mount -o remount,rw rootfs
+busybox mount -o remount,rw /system
+
+# L_wizard
+tweaks=/system/etc/L_Speed
+turn_on=/system/etc/init.d
+divider="============================================="
+
+
+   clear
+
+   echo $divider
+   echo ""
+   echo " Welcome to L Speed WIZARD"
+   echo ""
+   echo $divider  
+ 
+   id=`id`; id=`echo ${id#*=}`; id=`echo ${id%%\(*}`; id=`echo ${id%% *}`
+   if [ "$id" != "0" ] && [ "$id" != "root" ]; 
+   then
+   sleep 2
+   echo $divider
+   echo ""
+   echo "You don't have ROOT..."
+   echo ""
+   echo $divider
+   sleep 1
+   exit
+   fi
+
+
+  if [ -e $turn_on/02VM_tweaks ]; then
+   VM_tweaks="On"
+   else
+   VM_tweaks="Off"
+   fi
+
+  if [ -e $turn_on/03Ram_manager ]; then
+   ram_manager="On"
+   else
+   ram_manager="Off"
+   fi
+
+  if [ -e $turn_on/04Cleaner ]; then
+   cleaner="On"
+   else
+   cleaner="Off"
+   fi
+
+  if [ -e $turn_on/05Net_tweaks ]; then
+   net_tweaks="On"
+   else
+   net_tweaks="Off"
+   fi
+
+  if [ -e $turn_on/06SD_tweak ]; then
+   sd_tweak="On"
+   else
+   sd_tweak="Off"
+   fi
+
+  if [ -e $turn_on/07Zipalign ]; then
+   zipalign="On"
+   else
+   zipalign="Off"
+   fi
+
+   echo ""
+   echo ""
+ sleep 1
+   echo "666. Enable all"
+   echo "999. Disable all"
+   echo ""
+   echo ""
+sleep 1
+   echo "1. Seeder  menu"
+sleep 1
+   echo "2. VM tweaks       | $VM_tweaks"
+   echo "3. Ram Manager     | $ram_manager"
+sleep 1
+   echo "4. Cleaner         | $cleaner"
+   echo "5. Net tweaks      | $net_tweaks"
+sleep 1
+   echo "6. SD speed tweak  | $sd_tweak"
+   echo "7. Zipalign        | $zipalign"
+sleep 1
+   echo ""
+   echo ""
+   echo ""
+   echo "Go back - type  back  then enter"
+sleep 1
+    echo ""
+     echo ""
+   echo -n "Please select an option: "
+   read option
+
+ if [ $option -eq back ]; then
+    echo "Going back to L Speed menu..."
+     sleep 3
+     sh system/bin/L_Speed
+   fi
+
+    if [ $option -eq 666 ]; then
+        echo "Enabling all tweaks..."
+        sleep 1
+	cp $tweaks/01Seeder $turn_on/01Seeder
+	chmod 777 $turn_on/01Seeder
+	cp $tweaks/02VM_tweaks $turn_on/02VM_tweaks
+	chmod 777 $turn_on/02VM_tweaks
+	cp $tweaks/03Ram_manager $turn_on/03Ram_manager
+	chmod 777 $turn_on/03Ram_manager
+	cp $tweaks/04Cleaner $turn_on/04Cleaner
+	chmod 777 $turn_on/04Cleaner
+	cp $tweaks/05Net_tweaks $turn_on/05Net_tweaks
+	chmod 777 $turn_on/05Net_tweaks
+	cp $tweaks/06SD_tweak $turn_on/06SD_tweak
+	chmod 777 $turn_on/06SD_tweak
+	cp $tweaks/07Zipalign $turn_on/07Zipalign
+	chmod 777 $turn_on/07Zipalign
+    echo "Tweaks enabled"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+
+   if [ $option -eq 999 ]; then
+    echo "Disabling all tweaks..."
+	sleep 1
+	rm $turn_on/01Seeder
+	rm $turn_on/02VM_tweaks
+	rm $turn_on/03Ram_manager
+	rm $turn_on/04Cleaner
+	rm $turn_on/05Net_tweaks
+	rm $turn_on/06SD_tweak
+	rm $turn_on/07Zipalign
+     echo "Tweaks disabled"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+
+   if [ $option -eq 1 ]; then
+    echo "Opening seeder menu..."
+     sleep 3
+     sh system/bin/0seeder
+   fi
+
+   if [ $option -eq 2 ]; then
+   if [ -e $turn_on/02VM_tweaks ]; then
+    echo "Disabling init.d script..."
+	sleep 1
+	rm $turn_on/02VM_tweaks
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+	     sh system/bin/0L_Wizard
+   else
+    echo "Enabling init.d script..."
+	sleep 1
+	cp $tweaks/02VM_tweaks $turn_on/02VM_tweaks
+	chmod 777 $turn_on/02VM_tweaks
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+ 
+   elif [ $option -eq 3 ]; then
+   if [ -e $turn_on/03Ram_manager ]; then
+    echo "Disabling init.d script..."
+	sleep 1
+	rm $turn_on/03Ram_manager
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+	     sh system/bin/0L_Wizard
+   else
+    echo "Enabling init.d script..."
+	sleep 1
+	cp $tweaks/03Ram_manager $turn_on/03Ram_manager
+	chmod 777 $turn_on/03Ram_manager
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+
+   elif [ $option -eq 4 ]; then
+   if [ -e $turn_on/04Cleaner ]; then
+    echo "Disabling init.d script..."
+	sleep 1
+	rm $turn_on/04Cleaner
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+	     sh system/bin/0L_Wizard
+   else
+    echo "Enabling init.d script..."
+	sleep 1
+	cp $tweaks/04Cleaner $turn_on/04Cleaner
+	chmod 777 $turn_on/04Cleaner
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+
+   elif [ $option -eq 5 ]; then
+   if [ -e $turn_on/05Net_tweaks ]; then
+    echo "Disabling init.d script..."
+	sleep 1
+	rm $turn_on/05Net_tweaks
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+	     sh system/bin/0L_Wizard
+   else
+    echo "Enabling init.d script..."
+	sleep 1
+	cp $tweaks/05Net_tweaks $turn_on/05Net_tweaks
+	chmod 777 $turn_on/05Net_tweaks
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+
+   elif [ $option -eq 6 ]; then
+   if [ -e $turn_on/06SD_tweak ]; then
+    echo "Disabling init.d script..."
+	sleep 1
+	rm $turn_on/06SD_tweak
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+	     sh system/bin/0L_Wizard
+   else
+    echo "Enabling init.d script..."
+	sleep 1
+	cp $tweaks/06SD_tweak $turn_on/06SD_tweak
+	chmod 777 $turn_on/06SD_tweak
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+
+   elif [ $option -eq 7 ]; then
+   if [ -e $turn_on/07Zipalign ]; then
+    echo "Disabling init.d script..."
+	sleep 1
+	rm $turn_on/07Zipalign
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+	     sh system/bin/0L_Wizard
+   else
+    echo "Enabling init.d script..."
+	sleep 1
+	cp $tweaks/07Zipalign $turn_on/07Zipalign
+	chmod 777 $turn_on/07Zipalign
+    echo "Done!"
+	echo "Press enter to continue..."
+	read enterKey
+     sh system/bin/0L_Wizard
+   fi
+
+   exit
+ 
+   else
+   echo "Invalid option, please try again..."
+   sleep 1
+   sh system/bin/0L_Wizard
+   fi
+ 

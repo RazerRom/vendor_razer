@@ -5,7 +5,7 @@
 mount -o rw,remount /system
 
 # Variables
-magic=/system/etc/seeder_scripts
+magic=/system/etc/L_Speed
 work_fol=/system/etc/init.d
 divider="============================================="
 
@@ -42,7 +42,7 @@ divider="============================================="
    seeder_switch="Off"
    fi
    
-   if [ -e $work_fol/Seeder ]; then
+   if [ -e $work_fol/01Seeder ]; then
    seeder_boot="Yes"
    else
    seeder_boot="No"
@@ -62,7 +62,7 @@ divider="============================================="
    echo "1. Seeder entropy generator on/off"
    echo "2. Run at boot on/off"
    echo "3. Monitor entropy_avail"
-   echo "4. Exit"
+   echo "4. Back to L Speed Wizard"
    echo ""
 
    echo -n "Please select an option [1-4]: "
@@ -76,7 +76,7 @@ divider="============================================="
     echo "Done!"
 	echo "Press enter to continue..."
 	read enterKey
-	seeder
+	0seeder
    else
     echo "Switching seeder entropy generator on..."
 	if pgrep qrngd > /dev/null; then
@@ -85,7 +85,7 @@ divider="============================================="
 	  echo ""
 	  echo "Press enter to continue..."
 	  read enterKey
-	  seeder
+	  0seeder
 	else
 	  if [ -e /system/bin/qrngd -o -e /system/xbin/qrngd ]; then
 	    sleep 1
@@ -93,7 +93,7 @@ divider="============================================="
 		echo ""
 		echo "Press enter to continue..."
 		read enterKey
-		seeder
+		0seeder
 	  else
 	    rngd -t 2 -T 1 -s 256 --fill-watermark=80%
         sleep 2
@@ -102,29 +102,29 @@ divider="============================================="
         echo "Done!"
 	    echo "Press enter to continue..."
 	    read enterKey
-	    seeder
+	    0seeder
 	  fi
 	fi
    fi
  
    elif [ $option -eq 2 ]; then
-   if [ -e $work_fol/Seeder ]; then
+   if [ -e $work_fol/01Seeder ]; then
     echo "Disabling init.d script..."
 	sleep 1
-	rm $work_fol/Seeder
+	rm $work_fol/01Seeder
     echo "Done!"
 	echo "Press enter to continue..."
 	read enterKey
-	seeder
+	0seeder
    else
     echo "Enabling init.d script..."
 	sleep 1
-	cp $magic/Seeder $work_fol/Seeder
-	chmod 777 $work_fol/Seeder
+	cp $magic/01Seeder $work_fol/01Seeder
+	chmod 777 $work_fol/01Seeder
     echo "Done!"
 	echo "Press enter to continue..."
 	read enterKey
-	seeder
+	0seeder
    fi
  
    elif [ $option -eq 3 ]; then
@@ -133,21 +133,16 @@ divider="============================================="
    entro
 
    elif [ $option -eq 4 ]; then
-   mount -o ro,remount /system
+   sleep 1
+   sh system/bin/0L_Wizard
    sleep 1
    echo ""
-   echo "Bye bye!" 
-   echo ""
-   echo $divider
-   echo ""
-   echo " Seeder Entropy Generator Extended Menu v4"
-   echo ""
-   echo $divider  
+
    exit
  
    else
    echo "Invalid option, please try again..."
    sleep 1
-   seeder
+   0seeder
    fi
  

@@ -1,0 +1,165 @@
+#!/system/bin/sh
+
+clear
+   echo ""
+   echo "==========================================="
+   echo "==    L Speed - Make your device smoother      =="
+   echo "==                        Paget96@XDA                      =="
+   echo "==               ^~^~^~^~^~^~^~^~^~^            =="
+   echo "==========================================="
+sleep 2
+   echo ""
+   echo "checking all installed files, please wait..."
+sleep 2
+   echo ""
+   echo "Checking for init.d support..."
+sleep 1
+if [ -e /system/etc/init.d/00init.d_check ]; then
+   echo ""
+   echo "folder was found and you have fully init.d support.."
+sleep 1
+else
+   echo ""
+   echo "folder was not found, you don't have init.d support :("
+sleep 1
+fi
+
+   echo ""
+   echo "Checking L Speed folder.."
+sleep 1
+if [ -e /system/etc/L_Speed ]; then
+   echo ""
+   echo "L Speed folder exist :)"
+sleep 1
+else
+   echo ""
+   echo "L Speed folder was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "checking bin folder..."
+sleep 1
+   echo ""
+   echo "Checking for L Wizard..."
+sleep 1
+if [ -e /system/bin/0L_Wizard ]; then
+   echo ""
+   echo "L Wizard is installed..."
+sleep 1
+else
+   echo ""
+   echo "L Wizard was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "Checking for L-check binary..."
+sleep 1
+if [ -e /system/bin/0L-check ]; then
+   echo ""
+   echo "L-check is installed..."
+sleep 1
+else
+   echo ""
+   echo "L-check  was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "Checking for seeder binary..."
+sleep 1
+if [ -e /system/bin/0seeder ]; then
+   echo ""
+   echo "seeder binary is installed..."
+sleep 1
+else
+   echo ""
+   echo "seeder binary was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "Checking for uninstaller binary..."
+sleep 1
+if [ -e /system/bin/0uninstaller ]; then
+   echo ""
+   echo "uninstaller binary is installed..."
+sleep 1
+else
+   echo ""
+   echo "uninstaller binary was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "Checking L  Speed binary..."
+sleep 1
+if [ -e /system/bin/L_Speed ]; then
+   echo ""
+   echo "L Speed binary is installed..."
+sleep 1
+else
+   echo ""
+   echo "L Speed binary was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "checking xbin folder..."
+sleep 1
+   echo ""
+   echo "Checking for openvpn binary..."
+sleep 1
+if [ -e /system/xbin/openvpn ]; then
+   echo ""
+   echo "openvpn binary is installed..."
+sleep 1
+else
+   echo ""
+   echo "openvpn binary was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "Checking for zipalign binary..."
+sleep 1
+if [ -e /system/xbin/zipalign ]; then
+   echo ""
+   echo "zipalign binary is installed..."
+sleep 1
+else
+   echo ""
+   echo "zipalign binary was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "Checking for entro binary..."
+sleep 1
+if [ -e /system/xbin/entro ]; then
+   echo ""
+   echo "entro binary is installed..."
+sleep 1
+else
+   echo ""
+   echo "entro binary was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+
+   echo ""
+   echo "Checking for rngd binary..."
+sleep 1
+if [ -e /system/xbin/rngd ]; then
+   echo ""
+   echo "rngd binary is installed..."
+sleep 1
+else
+   echo ""
+   echo "rngd binary was not found, please go to recovery and RE-FLASH L Speed."
+sleep 1
+fi
+   echo ""
+   echo "Checking L Speed files is finished!"
+sleep 5
+exit 0

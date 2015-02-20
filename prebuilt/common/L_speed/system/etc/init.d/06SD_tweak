@@ -1,0 +1,27 @@
+#!/system/bin/sh
+
+LS=/data/L_Speed/Logs/06SD_tweak.log
+
+busybox rm -f $LS
+busybox touch $LS
+
+echo "# L Speed log" | tee -a $LS
+echo "" | tee -a $LS
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) Adding SD speed tweak..." | tee -a $LS;
+
+
+busybox mount -o remount,rw rootfs
+busybox mount -o remount,rw /system
+
+# SDcard cache
+LS=2048
+READAHEAD=/sys/devices/virtual/bdi/179:*
+
+for i in $READAHEAD; do
+if [ -e ${i}/read_ahead_kb ]; then
+busybox echo "$LS" > ${i}/read_ahead_kb;
+fi;
+done
+
+echo "" | tee -a $LS
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) SD speed tweak added" | tee -a $LS;
