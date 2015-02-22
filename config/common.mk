@@ -127,6 +127,10 @@ PRODUCT_COPY_FILES += \
 # T-Mobile theme engine
 include vendor/bliss/config/themes_common.mk
 
+# RomStats
+PRODUCT_PACKAGES += \
+    RomStats
+
 # Screen recorder
 PRODUCT_PACKAGES += \
     ScreenRecorder \
