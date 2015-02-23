@@ -267,6 +267,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.profiler=1 \
     dalvik.vm.isa.arm.features=lpae,div
 
+# statistics identity
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.romstats.url=http://http://team.blissroms.com/RomStats/website/stats.php \
+    ro.romstats.name=BlissPopGM \
+    ro.romstats.version=$(BLISS_VERSION) \
+    ro.romstats.askfirst=0 \
+    ro.romstats.tframe=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    BUILD_DISPLAY_ID=$(BUILD_ID) \
+    ro.bliss.version=$(BLISS_VERSION)
+
 # L Speed Reborn
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/01Seeder.log:data/L_Speed/Logs/01Seeder.log \
