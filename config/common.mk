@@ -280,39 +280,39 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bliss.version=$(BLISS_VERSION)
 
 # L Speed Reborn
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/01Seeder.log:data/L_Speed/Logs/01Seeder.log \
-    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/02VM_tweaks.log:data/L_Speed/Logs/02VM_tweaks.log \
-    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/03Ram_manager.log:data/L_Speed/Logs/03Ram_manager.log \
-    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/04Cleaner.log:data/L_Speed/Logs/04Cleaner.log \
-    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/05Net_tweaks.log:data/L_Speed/Logs/05Net_tweaks.log \
-    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/06SD_tweak.log:data/L_Speed/Logs/06SD_tweak.log \
-    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/07Zipalign.log:data/L_Speed/Logs/07Zipalign.log \
-    vendor/bliss/prebuilt/common/L_speed/system/bin/0L-check:system/bin/0L-check \
-    vendor/bliss/prebuilt/common/L_speed/system/bin/0L_Wizard:system/bin/0L_Wizard \
-    vendor/bliss/prebuilt/common/L_speed/system/bin/0seeder:system/bin/0seeder \
-    vendor/bliss/prebuilt/common/L_speed/system/bin/0uninstaller:system/bin/0uninstaller \
-    vendor/bliss/prebuilt/common/L_speed/system/bin/L_Speed:system/bin/L_Speed \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/00init.d_check:system/etc/init.d/00init.d_check \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/01Seeder:system/etc/init.d/01Seeder \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02VM_tweaks:system/etc/init.d/02VM_tweaks \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/03Ram_manager:system/etc/init.d/03Ram_manager \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/04Cleaner:system/etc/init.d/04Cleaner \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/05Net_tweaks:system/etc/init.d/05Net_tweaks \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/06SD_tweak:system/etc/init.d/06SD_tweak \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/07Zipalign:system/etc/init.d/07Zipalign \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/00changelog:system/etc/L_Speed/00changelog \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/01Seeder:system/etc/L_Speed/01Seeder \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/02VM_tweaks:system/etc/L_Speed/02VM_tweaks \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/03Ram_manager:system/etc/L_Speed/03Ram_manager \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/04Cleaner:system/etc/L_Speed/04Cleaner \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/05Net_tweaks:system/etc/L_Speed/05Net_tweaks \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/06SD_tweak:system/etc/L_Speed/06SD_tweak \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/07Zipalign:system/etc/L_Speed/07Zipalign \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/entro:system/xbin/entro \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
+#PRODUCT_COPY_FILES += \
+#    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/01Seeder.log:data/L_Speed/Logs/01Seeder.log \
+#    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/02VM_tweaks.log:data/L_Speed/Logs/02VM_tweaks.log \
+#    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/03Ram_manager.log:data/L_Speed/Logs/03Ram_manager.log \
+#    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/04Cleaner.log:data/L_Speed/Logs/04Cleaner.log \
+#    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/05Net_tweaks.log:data/L_Speed/Logs/05Net_tweaks.log \
+#    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/06SD_tweak.log:data/L_Speed/Logs/06SD_tweak.log \
+#    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/07Zipalign.log:data/L_Speed/Logs/07Zipalign.log \
+#    vendor/bliss/prebuilt/common/L_speed/system/bin/0L-check:system/bin/0L-check \
+#    vendor/bliss/prebuilt/common/L_speed/system/bin/0L_Wizard:system/bin/0L_Wizard \
+#    vendor/bliss/prebuilt/common/L_speed/system/bin/0seeder:system/bin/0seeder \
+#    vendor/bliss/prebuilt/common/L_speed/system/bin/0uninstaller:system/bin/0uninstaller \
+#    vendor/bliss/prebuilt/common/L_speed/system/bin/L_Speed:system/bin/L_Speed \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/00init.d_check:system/etc/init.d/00init.d_check \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/01Seeder:system/etc/init.d/01Seeder \
+#   vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02VM_tweaks:system/etc/init.d/02VM_tweaks \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/03Ram_manager:system/etc/init.d/03Ram_manager \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/04Cleaner:system/etc/init.d/04Cleaner \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/05Net_tweaks:system/etc/init.d/05Net_tweaks \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/06SD_tweak:system/etc/init.d/06SD_tweak \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/07Zipalign:system/etc/init.d/07Zipalign \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/00changelog:system/etc/L_Speed/00changelog \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/01Seeder:system/etc/L_Speed/01Seeder \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/02VM_tweaks:system/etc/L_Speed/02VM_tweaks \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/03Ram_manager:system/etc/L_Speed/03Ram_manager \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/04Cleaner:system/etc/L_Speed/04Cleaner \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/05Net_tweaks:system/etc/L_Speed/05Net_tweaks \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/06SD_tweak:system/etc/L_Speed/06SD_tweak \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/L_Speed/07Zipalign:system/etc/L_Speed/07Zipalign \
+#    vendor/bliss/prebuilt/common/L_speed/system/xbin/entro:system/xbin/entro \
+#    vendor/bliss/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
+#    vendor/bliss/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
+#    vendor/bliss/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
 
 # Nova Launcher
 PRODUCT_COPY_FILES += \
