@@ -150,7 +150,6 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     Eleven \
     LockClock \
     OmniSwitch \
@@ -246,7 +245,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
 
-# BlissPopGM Extras
+############# BlissPopGM Extras #############
 
 # property overides
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -279,6 +278,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.bliss.version=$(BLISS_VERSION)
 
+# AudioFX Mod by eng.stk
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/AudioFX/etc/audio_effects.conf:system/etc/audio_effects.conf \
+    vendor/bliss/prebuilt/common/AudioFX/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libaudiopreprocessing.so:system/lib/soundfx/libaudiopreprocessing.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libbundlewrapper.so:system/lib/soundfx/libbundlewrapper.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libdownmix.so:system/lib/soundfx/libdownmix.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libeffectproxy.so:system/lib/soundfx/libeffectproxy.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libldnhncr.so:system/lib/soundfx/libldnhncr.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libqcompostprocbundle.so:system/lib/soundfx/libqcompostprocbundle.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libqcomvisualizer.so:system/lib/soundfx/libqcomvisualizer.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libqcomvoiceprocessing.so:system/lib/soundfx/libqcomvoiceprocessing.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libqcomvoiceprocessingdescriptors.so:system/lib/soundfx/libqcomvoiceprocessingdescriptors.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libreverbwrapper.so:system/lib/soundfx/libreverbwrapper.so \
+    vendor/bliss/prebuilt/common/AudioFX/lib/soundfx/libvisualizer.so:system/lib/soundfx/libvisualizer.so \
+    vendor/bliss/prebuilt/common/AudioFX/priv-app/AudioFX/AudioFX.apk:system/priv-app/AudioFX/AudioFX.apk \
+    vendor/bliss/prebuilt/common/AudioFX/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    vendor/bliss/prebuilt/common/AudioFX/vendor/lib/soundfx/libqcbassboost.so:system/vendor/lib/soundfx/libqcbassboost.so \
+    vendor/bliss/prebuilt/common/AudioFX/vendor/lib/soundfx/libqcreverb.so:system/vendor/lib/soundfx/libqcreverb.so \
+    vendor/bliss/prebuilt/common/AudioFX/vendor/lib/soundfx/libqcvirt.so:system/vendor/lib/soundfx/libqcvirt.so \
+    
+
 # L Speed Reborn
 #PRODUCT_COPY_FILES += \
 #    vendor/bliss/prebuilt/common/L_speed/data/L_Speed/Logs/01Seeder.log:data/L_Speed/Logs/01Seeder.log \
@@ -295,7 +316,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #    vendor/bliss/prebuilt/common/L_speed/system/bin/L_Speed:system/bin/L_Speed \
 #    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/00init.d_check:system/etc/init.d/00init.d_check \
 #    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/01Seeder:system/etc/init.d/01Seeder \
-#   vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02VM_tweaks:system/etc/init.d/02VM_tweaks \
+#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02VM_tweaks:system/etc/init.d/02VM_tweaks \
 #    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/03Ram_manager:system/etc/init.d/03Ram_manager \
 #    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/04Cleaner:system/etc/init.d/04Cleaner \
 #    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/05Net_tweaks:system/etc/init.d/05Net_tweaks \
