@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += \
     
 # HFM Files
 PRODUCT_COPY_FILES += \
+	vendor/bliss/prebuilt/etc/xtwifi.conf:system/etc/xtwifi.conf \
 	vendor/bliss/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
 	vendor/bliss/prebuilt/etc/hosts.og:system/etc/hosts.og
 
