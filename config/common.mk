@@ -267,8 +267,6 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 # BLISS Versioning System
 -include vendor/bliss/config/versions.mk
 
--include vendor/cm/config/common_ukm.mk
-
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
 -include vendor/cyngn/product.mk
