@@ -89,9 +89,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
+ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+endif
 
 # fstrim support
 PRODUCT_COPY_FILES += \
