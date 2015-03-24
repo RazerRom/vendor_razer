@@ -55,6 +55,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Disable excessive dalvik debug messages
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.debug.alloc=0
+
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
@@ -69,7 +73,9 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/bliss/prebuilt/common/bin/50-bliss.sh:system/addon.d/50-bliss.sh \
-    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/bliss/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
+    vendor/bliss/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 endif
 
 # Signature compatibility validation
