@@ -154,8 +154,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     OmniSwitch \
     BlissPapers \
-    Terminal \
-    ABCamera
+    Terminal
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -300,6 +299,26 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/AudioFX/vendor/lib/soundfx/libqcbassboost.so:system/vendor/lib/soundfx/libqcbassboost.so \
     vendor/bliss/prebuilt/common/AudioFX/vendor/lib/soundfx/libqcreverb.so:system/vendor/lib/soundfx/libqcreverb.so \
     vendor/bliss/prebuilt/common/AudioFX/vendor/lib/soundfx/libqcvirt.so:system/vendor/lib/soundfx/libqcvirt.so \
+    
+# A Better Camera
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/ABCamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
+    vendor/bliss/prebuilt/common/ABCamera/libalmalib.so:system/lib/libalmalib.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-night.so:system/lib/libalmashot-night.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
+    vendor/bliss/prebuilt/common/ABCamera/libbestshot.so:system/lib/libbestshot.so \
+    vendor/bliss/prebuilt/common/ABCamera/libhiresportrait.so:system/lib/libhireportrait.so \
+    vendor/bliss/prebuilt/common/ABCamera/libhistogram.so:system/lib/libhistogram.so \
+    vendor/bliss/prebuilt/common/ABCamera/libpreshot.so:system/lib/libpreshot.so \
+    vendor/bliss/prebuilt/common/ABCamera/libswapheap.so:system/lib/libswapheap.so \
+    vendor/bliss/prebuilt/common/ABCamera/libutils-image.so:system/lib/libutils-image.so \
+    vendor/bliss/prebuilt/common/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
+    vendor/bliss/prebuilt/common/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
     
 
 # L Speed Reborn
