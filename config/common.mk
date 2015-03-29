@@ -188,7 +188,7 @@ PRODUCT_PACKAGES += \
     MonthCalendarWidget \
     BlissPapers \
     DeviceControl \
-    OpenCamera
+    ABCamera
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
