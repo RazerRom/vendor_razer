@@ -154,7 +154,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     OmniSwitch \
     BlissPapers \
-    Terminal
+    Terminal \
+    ABCamera
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
