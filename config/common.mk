@@ -280,7 +280,6 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 
 # by default, do not update the recovery with system updates
@@ -306,3 +305,28 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.bliss.version=$(BLISS_VERSION)
+
+# Team Bliss OTA Updater
+BLISS_OTA_BUILDDIR := Official
+ifeq ($(BLISS_BUILDTYPE),NIGHTLY)
+  BLISS_OTA_BUILDDIR := Nightlies
+endif
+BLISS_BASE_URL    := http://downloads.blissroms.com/BlissPop
+BLISS_DEVICE_URL  := $(BLISS_BASE_URL)/$(BLISS_OTA_BUILDDIR)/$(TARGET_DEVICE)
+BLISS_OTA_VERSION := $(shell date +%Y%m%d)
+BLISS_ROM_NAME    := BlissPop
+
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/blissota/BlissOTA.apk:system/app/BlissOTA/BlissOTA.apk \
+    vendor/bliss/prebuilt/lib/libbypass.so:system/lib/libbypass.so
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ota.systemname=$(BLISS_ROM_NAME) \
+    ro.ota.version=$(BLISS_OTA_VERSION) \
+    ro.ota.device=$(TARGET_DEVICE) \
+    ro.ota.manifest=$(BLISS_DEVICE_URL)/ota.xml
+
+export BLISS_OTA_ROM=$(BLISS_ROM_NAME)
+export BLISS_OTA_VERNAME=$(BLISS_VERSION)
+export BLISS_OTA_VER=$(BLISS_OTA_VERSION)
+export BLISS_OTA_URL=$(BLISS_DEVICE_URL)/$(BLISS_VERSION).zip

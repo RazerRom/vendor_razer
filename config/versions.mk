@@ -26,18 +26,15 @@ endif
 
 # Set BLISS version
 ifdef BLISS_RELEASE
-    BLISS_VERSION := "Blisspop-v"$(VERSION) 
+    BLISS_VERSION := BlissPop-v$(VERSION) 
 else
-    BLISS_VERSION := "BlissPop-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)"-$(shell date +%Y%m%d-%H%M)
+    BLISS_VERSION := BlissPop-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)-$(shell date +%Y%m%d-%H%M)
 endif
 
 BLISS_DISPLAY_VERSION := $(VERSION)
 BLISS_DISPLAY_BUILDTYPE := $(BLISS_BUILDTYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.modversion=$(VERSION) \
-    ro.bliss.version=$(VERSION)-$(BLISS_BUILDTYPE)
-    
-PRODUCT_PROPERTY_OVERRIDES += \
+  ro.modversion=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.display.version=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.display.buildtype=$(BLISS_DISPLAY_BUILDTYPE)
