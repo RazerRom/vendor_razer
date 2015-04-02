@@ -172,9 +172,9 @@ PRODUCT_PACKAGES += \
     RomStats
 
 # Screen recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
+#PRODUCT_PACKAGES += \
+    #ScreenRecorder \
+    #libscreenrecorder
 
 # Required CM packages
 PRODUCT_PACKAGES += \
@@ -200,7 +200,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     CMHome \
-    OmniSwitch \
+    #OmniSwitch \
     MonthCalendarWidget \
     BlissPapers \
     DeviceControl
