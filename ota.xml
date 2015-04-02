@@ -16,7 +16,7 @@
 		<HttpUrl>BlissRoms Server</HttpUrl>
 
 	<!--BlissPop Android Version-->
-		<Android>5.0.2</Android>
+		<Android>5.1.0</Android>
 
 	<!--THIS NEEDS TO BE EDITED EVERY NEW UPDATE-->
 	<!-- You can disable MD5 checking like this: <CheckMD5 nil="true" />-->
