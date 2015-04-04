@@ -200,7 +200,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     CMHome \
-    #OmniSwitch \
+    OmniSwitch \
     MonthCalendarWidget \
     BlissPapers \
     DeviceControl
