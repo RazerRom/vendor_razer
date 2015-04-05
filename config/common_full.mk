@@ -1,13 +1,13 @@
-# Inherit common Bliss stuff
+# Inherit common BlissRom stuff
 $(call inherit-product, vendor/bliss/config/common.mk)
 
-# Include Bliss audio files
+# Include BlissRom audio files
 include vendor/bliss/config/bliss_audio.mk
 
-# Include Bliss LatinIME dictionaries
+# Include BlissRom LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
 
-# Optional Bliss packages
+# Optional BlissRom packages
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     PhotoPhase
 
-# Extra tools in Bliss
+# Extra tools in BlissRom
 PRODUCT_PACKAGES += \
     vim \
     zip \

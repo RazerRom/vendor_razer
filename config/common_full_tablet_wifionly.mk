@@ -1,4 +1,4 @@
-# Inherit common Bliss stuff
+# Inherit common BlissRom stuff
 $(call inherit-product, vendor/bliss/config/common_full.mk)
 
 # Default notification/alarm sounds

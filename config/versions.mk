@@ -1,5 +1,5 @@
-# Versioning System For Bliss
-# Bliss RELEASE VERSION
+# Versioning System For BlissRom
+# BlissRom RELEASE VERSION
 BLISS_VERSION_MAJOR = 3
 BLISS_VERSION_MINOR = 0
 BLISS_VERSION_MAINTENANCE =
@@ -24,11 +24,11 @@ else
     BLISS_VERSION_MINOR := 0
 endif
 
-# Set BLISS version
+# Set BlissRom version
 ifdef BLISS_RELEASE
-    BLISS_VERSION := BlissPop-v$(VERSION) 
+    BLISS_VERSION := BlissRom-v$(VERSION) 
 else
-    BLISS_VERSION := BlissPop-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)-$(shell date +%Y%m%d-%H%M)
+    BLISS_VERSION := BlissRom-v$(VERSION)-$(BLISS_BUILD)-$(BLISS_BUILDTYPE)-$(shell date +%Y%m%d-%H%M)
 endif
 
 BLISS_DISPLAY_VERSION := $(VERSION)

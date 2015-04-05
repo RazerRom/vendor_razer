@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= bliss
+PRODUCT_BRAND ?= BlissRom
 
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
@@ -138,7 +138,7 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/abcamera/libutils-jni.so:system/lib/libutils-jni.so \
     vendor/bliss/prebuilt/abcamera/libyuvimage.so:system/lib/libyuvimage.so
 
-# Bliss-specific init file
+# BlissRom-specific init file
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
@@ -160,7 +160,7 @@ ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
 endif
 
-# This is Bliss!
+# This is BlissRom!
 PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/com.bliss.android.xml:system/etc/permissions/com.bliss.android.xml
 
@@ -176,20 +176,20 @@ PRODUCT_PACKAGES += \
     #ScreenRecorder \
     #libscreenrecorder
 
-# Required CM packages
+# Required BlissRom packages
 PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     BluetoothExt
 
-# Optional CM packages
+# Optional BlissRom packages
 PRODUCT_PACKAGES += \
     VoicePlus \
     Basic \
     libemoji \
     Terminal
 
-# Custom CM packages
+# Custom BlissRom packages
 PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
@@ -205,12 +205,12 @@ PRODUCT_PACKAGES += \
     BlissPapers \
     DeviceControl
 
-# Bliss Hardware Abstraction Framework
+# BlissRom Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
-# Extra tools in Bliss
+# Extra tools in BlissRom
 PRODUCT_PACKAGES += \
     libsepol \
     e2fsck \
@@ -285,7 +285,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
-# BLISS Versioning System
+# BlissRom Versioning System
 -include vendor/bliss/config/versions.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
@@ -297,7 +297,7 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 # statistics identity
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.romstats.url=http://http://team.blissroms.com/RomStats/website/stats.php \
-    ro.romstats.name=BlissPop \
+    ro.romstats.name=BlissRom \
     ro.romstats.version=$(BLISS_VERSION) \
     ro.romstats.askfirst=0 \
     ro.romstats.tframe=1
