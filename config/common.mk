@@ -95,48 +95,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init.d/98fstrim:system/etc/init.d/98fstrim
 
-# L Speed
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/kernelTweaks.log:data/Tweaks/kernelTweaks.log \
-    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/ram_manager.log:data/Tweaks/ram_manager.log \
-    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/Seeder_v7.log:data/Tweaks/Seeder_v7.log \
-    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/zipalign.log:data/Tweaks/zipalign.log \
-    vendor/bliss/prebuilt/common/L_speed/system/bin/seeder:system/bin/seeder \
-    vendor/bliss/prebuilt/common/L_speed/system/bin/uninstaller:system/bin/uninstaller \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/01kernelTweaks:system/etc/init.d/01kernelTweaks \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02zipalign:system/etc/init.d/02zipalign \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/03ram_manager:system/etc/init.d/03ram_manager \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/Seeder:system/etc/init.d/Seeder \
-    vendor/bliss/prebuilt/common/L_speed/system/etc/seeder_scripts/Seeder:system/etc/seeder_scripts/Seeder \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/entro:system/xbin/entro \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
-    vendor/bliss/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
-
 # SuperSU
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     vendor/bliss/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-
-# A Better Camera
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/abcamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
-    vendor/bliss/prebuilt/abcamera/libalmalib.so:system/lib/libalmalib.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-night.so:system/lib/libalmashot-night.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
-    vendor/bliss/prebuilt/abcamera/libbestshot.so:system/lib/libbestshot.so \
-    vendor/bliss/prebuilt/abcamera/libhiresportrait.so:system/lib/libhireportrait.so \
-    vendor/bliss/prebuilt/abcamera/libhistogram.so:system/lib/libhistogram.so \
-    vendor/bliss/prebuilt/abcamera/libpreshot.so:system/lib/libpreshot.so \
-    vendor/bliss/prebuilt/abcamera/libswapheap.so:system/lib/libswapheap.so \
-    vendor/bliss/prebuilt/abcamera/libutils-image.so:system/lib/libutils-image.so \
-    vendor/bliss/prebuilt/abcamera/libutils-jni.so:system/lib/libutils-jni.so \
-    vendor/bliss/prebuilt/abcamera/libyuvimage.so:system/lib/libyuvimage.so
 
 # BlissRom-specific init file
 PRODUCT_COPY_FILES += \
@@ -300,3 +262,49 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.bliss.version=$(BLISS_VERSION)
+    
+#
+# BlissRom Extras
+#
+
+# A Better Camera
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/ABCamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
+    vendor/bliss/prebuilt/common/ABCamera/libalmalib.so:system/lib/libalmalib.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-night.so:system/lib/libalmashot-night.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
+    vendor/bliss/prebuilt/common/ABCamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
+    vendor/bliss/prebuilt/common/ABCamera/libbestshot.so:system/lib/libbestshot.so \
+    vendor/bliss/prebuilt/common/ABCamera/libhiresportrait.so:system/lib/libhireportrait.so \
+    vendor/bliss/prebuilt/common/ABCamera/libhistogram.so:system/lib/libhistogram.so \
+    vendor/bliss/prebuilt/common/ABCamera/libpreshot.so:system/lib/libpreshot.so \
+    vendor/bliss/prebuilt/common/ABCamera/libswapheap.so:system/lib/libswapheap.so \
+    vendor/bliss/prebuilt/common/ABCamera/libutils-image.so:system/lib/libutils-image.so \
+    vendor/bliss/prebuilt/common/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
+    vendor/bliss/prebuilt/common/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
+    
+# L Speed
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/kernelTweaks.log:data/Tweaks/kernelTweaks.log \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/ram_manager.log:data/Tweaks/ram_manager.log \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/Seeder_v7.log:data/Tweaks/Seeder_v7.log \
+    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/zipalign.log:data/Tweaks/zipalign.log \
+    vendor/bliss/prebuilt/common/L_speed/system/bin/seeder:system/bin/seeder \
+    vendor/bliss/prebuilt/common/L_speed/system/bin/uninstaller:system/bin/uninstaller \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/01kernelTweaks:system/etc/init.d/01kernelTweaks \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02zipalign:system/etc/init.d/02zipalign \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/03ram_manager:system/etc/init.d/03ram_manager \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/Seeder:system/etc/init.d/Seeder \
+    vendor/bliss/prebuilt/common/L_speed/system/etc/seeder_scripts/Seeder:system/etc/seeder_scripts/Seeder \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/entro:system/xbin/entro \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
+    vendor/bliss/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
+    
+# Nova Launcher
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk \
