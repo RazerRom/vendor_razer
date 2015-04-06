@@ -155,10 +155,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     CMWallpapers \
-    Eleven \
     LockClock \
     CMAccount \
-    CMHome \
     OmniSwitch \
     BlissPapers
 
@@ -286,7 +284,11 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/ABCamera/libutils-image.so:system/lib/libutils-image.so \
     vendor/bliss/prebuilt/common/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
     vendor/bliss/prebuilt/common/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
-    
+
+# ES File Explorer
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/app/ESFileExplorer.apk:system/app/ESFileExplorer/ESFileExplorer.apk
+
 # L Speed
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/L_speed/data/Tweaks/kernelTweaks.log:data/Tweaks/kernelTweaks.log \
@@ -304,7 +306,15 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
     vendor/bliss/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
     vendor/bliss/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
-    
+
 # Nova Launcher
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk \
+    vendor/bliss/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
+
+# Poweramp
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
+
+# Quick Pic
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
