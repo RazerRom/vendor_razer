@@ -191,19 +191,14 @@ PRODUCT_PACKAGES += \
 
 # Custom BlissRom packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
-    Trebuchet \
     AudioFX \
     CMWallpapers \
-    CMFileManager \
     Eleven \
     LockClock \
     CMAccount \
     CMHome \
     OmniSwitch \
-    MonthCalendarWidget \
-    BlissPapers \
-    DeviceControl
+    BlissPapers
 
 # BlissRom Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
