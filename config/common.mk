@@ -158,7 +158,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     OmniSwitch \
-    BlissPapers
+    BlissPapers \
+    KernelAdiutor
 
 # BlissRom Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
