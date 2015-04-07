@@ -286,6 +286,27 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
     vendor/bliss/prebuilt/common/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
 
+# BlissRom property overides
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.bg_apps_limit=24 \
+    pm.sleep.mode=1 \
+    wifi.supplicant_scan_interval=180 \
+    windowsmgr.max_events_per_sec=150 \
+    debug.performance.tuning=1 \
+    ro.ril.power_collapse=1 \
+    persist.service.lgospd.enable=0 \
+    persist.service.pcsync.enable=0 \
+    ro.facelock.black_timeout=400 \
+    ro.facelock.det_timeout=1500 \
+    ro.facelock.rec_timeout=2500 \
+    ro.facelock.lively_timeout=2500 \
+    ro.facelock.est_max_time=600 \
+    ro.facelock.use_intro_anim=false \
+    dalvik.vm.profiler=1 \
+    dalvik.vm.isa.arm.features=lpae,div \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-filter=everything
+
 # ES File Explorer
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/app/ESFileExplorer.apk:system/app/ESFileExplorer/ESFileExplorer.apk
