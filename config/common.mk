@@ -338,5 +338,5 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
 
 # Quick Pic
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
+#PRODUCT_COPY_FILES += \
+#    vendor/bliss/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
