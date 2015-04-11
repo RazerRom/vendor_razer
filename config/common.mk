@@ -157,6 +157,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     CMWallpapers \
+    Eleven \
     LockClock \
     CMAccount \
     OmniSwitch \
@@ -334,8 +335,8 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
 
 # Poweramp
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
+#PRODUCT_COPY_FILES += \
+#    vendor/bliss/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
 
 # Quick Pic
 #PRODUCT_COPY_FILES += \
