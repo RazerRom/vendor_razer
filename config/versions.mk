@@ -38,3 +38,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.modversion=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.display.version=$(BLISS_DISPLAY_VERSION) \
   ro.bliss.display.buildtype=$(BLISS_DISPLAY_BUILDTYPE)
+
+export BLISS_OTA_XMLVER=$(BLISS_VERSION_MAJOR)_$(BLISS_VERSION_MINOR)

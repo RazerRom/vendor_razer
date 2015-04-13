@@ -315,7 +315,7 @@ ifeq ($(BLISS_BUILDTYPE),NIGHTLY)
 endif
 BLISS_BASE_URL    := http://downloads.blissroms.com/BlissPop
 BLISS_DEVICE_URL  := $(BLISS_BASE_URL)/$(BLISS_OTA_BUILDDIR)/$(TARGET_DEVICE)
-BLISS_OTA_VERSION := $(shell date +%Y%m%d)
+BLISS_OTA_VERSION := $(shell date +%Y%m%d%H)
 BLISS_ROM_NAME    := BlissPop
 
 PRODUCT_COPY_FILES += \
@@ -326,7 +326,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.systemname=$(BLISS_ROM_NAME) \
     ro.ota.version=$(BLISS_OTA_VERSION) \
     ro.ota.device=$(TARGET_DEVICE) \
-    ro.ota.manifest=$(BLISS_DEVICE_URL)/ota.xml
+    ro.ota.manifest=$(BLISS_DEVICE_URL)/ota$(BLISS_OTA_XMLVER).xml
 
 export BLISS_OTA_ROM=$(BLISS_ROM_NAME)
 export BLISS_OTA_VERNAME=$(BLISS_VERSION)

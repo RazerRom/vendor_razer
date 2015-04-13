@@ -4,7 +4,7 @@
 
 . $ANDROID_BUILD_TOP/vendor/bliss/tools/colors
 
-export otaxml=ota.xml
+export otaxml=ota${BLISS_OTA_XMLVER}.xml
 
 if [ -f $otaxml ];
 then
