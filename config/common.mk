@@ -142,6 +142,10 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/abcamera/libutils-jni.so:system/lib/libutils-jni.so \
     vendor/bliss/prebuilt/abcamera/libyuvimage.so:system/lib/libyuvimage.so
 
+# Blissful Wallpapers
+PRODUCT_COPY_FILES += \
+    vendor/bliss/prebuilt/blisspapers/BlissPapers.apk:system/app/BlissPapers/BlissPapers.apk
+
 # Bliss-specific init file
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.cm.rc
@@ -206,7 +210,6 @@ PRODUCT_PACKAGES += \
     CMHome \
     OmniSwitch \
     MonthCalendarWidget \
-    BlissPapers \
     DeviceControl
 
 # Bliss Hardware Abstraction Framework
