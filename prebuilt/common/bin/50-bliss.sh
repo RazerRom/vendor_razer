@@ -5,6 +5,9 @@
 # /system is formatted and reinstalled, then the file is restored.
 #
 
+#Remove duplicate folder from previous builds:
+rm -rf "/system/priv-app/BlissPapers"
+
 . /tmp/backuptool.functions
 
 list_files() {
