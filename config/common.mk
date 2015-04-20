@@ -314,12 +314,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bliss.version=$(BLISS_VERSION)
 
 # Team Bliss OTA Updater
+ifeq ($(BLISS_DONATE),)
+  BLISS_DONATE =: http://goo.gl/tymMFo
+endif
 BLISS_OTA_BUILDDIR := Official
 ifeq ($(BLISS_BUILDTYPE),NIGHTLY)
   BLISS_OTA_BUILDDIR := Nightlies
 endif
 BLISS_BASE_URL    := http://downloads.blissroms.com/BlissPop
-BLISS_DEVICE_URL  := $(BLISS_BASE_URL)/$(BLISS_OTA_BUILDDIR)/$(TARGET_DEVICE)
+ifeq ($(BLISS_DEVICE_URL),)
+  BLISS_DEVICE_URL := $(BLISS_BASE_URL)/$(BLISS_OTA_BUILDDIR)/$(TARGET_DEVICE)
+endif
 BLISS_OTA_VERSION := $(shell date +%Y%m%d%H)
 BLISS_ROM_NAME    := BlissPop
 
