@@ -212,7 +212,10 @@ PRODUCT_PACKAGES += \
     CMHome \
     OmniSwitch \
     MonthCalendarWidget \
-    KernelAdiutor
+    KernelAdiutor \
+    BlissPapers \
+    DeviceControl \
+    OpenCamera
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
