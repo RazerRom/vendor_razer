@@ -181,6 +181,7 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
+    Camera2 \
     Launcher3 \
     Trebuchet \
     AudioFX \
@@ -190,15 +191,18 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     CMHome \
-    OmniSwitch \
-    MonthCalendarWidget \
-    KernelAdiutor \
-    BlissPapers
+    MonthCalendarWidget
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
+
+# Other packages
+PRODUCT_PACKAGES += \
+    KernelAdiutor \
+    OmniSwitch \
+    BlissPapers
 
 # Extra tools in Bliss
 PRODUCT_PACKAGES += \
