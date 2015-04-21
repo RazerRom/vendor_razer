@@ -124,26 +124,6 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     vendor/bliss/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# A Better Camera
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/abcamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
-    vendor/bliss/prebuilt/abcamera/libalmalib.so:system/lib/libalmalib.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-night.so:system/lib/libalmashot-night.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
-    vendor/bliss/prebuilt/abcamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
-    vendor/bliss/prebuilt/abcamera/libbestshot.so:system/lib/libbestshot.so \
-    vendor/bliss/prebuilt/abcamera/libhiresportrait.so:system/lib/libhireportrait.so \
-    vendor/bliss/prebuilt/abcamera/libhistogram.so:system/lib/libhistogram.so \
-    vendor/bliss/prebuilt/abcamera/libpreshot.so:system/lib/libpreshot.so \
-    vendor/bliss/prebuilt/abcamera/libswapheap.so:system/lib/libswapheap.so \
-    vendor/bliss/prebuilt/abcamera/libutils-image.so:system/lib/libutils-image.so \
-    vendor/bliss/prebuilt/abcamera/libutils-jni.so:system/lib/libutils-jni.so \
-    vendor/bliss/prebuilt/abcamera/libyuvimage.so:system/lib/libyuvimage.so
-
 # Blissful Wallpapers
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/blisspapers/BlissPapers.apk:system/app/BlissPapers/BlissPapers.apk
@@ -214,7 +194,6 @@ PRODUCT_PACKAGES += \
     MonthCalendarWidget \
     KernelAdiutor \
     BlissPapers \
-    DeviceControl \
     OpenCamera
 
 # Bliss Hardware Abstraction Framework
