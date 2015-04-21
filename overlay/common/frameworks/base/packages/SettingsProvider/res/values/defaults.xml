@@ -25,9 +25,9 @@
     <!-- Enable notification counters in statusbar -->
     <integer name="def_notif_count">1</integer>
 
-    <!-- Right QS pulldown -->
-    <integer name="def_qs_quick_pulldown">1</integer>
+    <!-- Left QS pulldown -->
+    <integer name="def_qs_quick_pulldown">2</integer>
 
     <!-- Default for Settings.Secure.STATS_COLLECTION. -->
-    <bool name="def_cm_stats_collection">true</bool>
+    <bool name="def_cm_stats_collection">false</bool>
 </resources>
