@@ -193,8 +193,7 @@ PRODUCT_PACKAGES += \
     OmniSwitch \
     MonthCalendarWidget \
     KernelAdiutor \
-    BlissPapers \
-    OpenCamera
+    BlissPapers
 
 # Bliss Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
