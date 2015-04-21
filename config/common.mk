@@ -146,7 +146,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Development \
     LatinIME \
-    BluetoothExt
+    BluetoothExt \
+    Profiles
 
 # Optional BlissRom packages
 PRODUCT_PACKAGES += \
