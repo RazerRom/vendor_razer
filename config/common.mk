@@ -170,8 +170,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Development \
     LatinIME \
-    BluetoothExt \
-    Profiles
+    BluetoothExt
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
