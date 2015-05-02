@@ -316,7 +316,6 @@ BLISS_OTA_VERSION := $(shell date +%Y%m%d%H)
 BLISS_ROM_NAME    := BlissPop
 
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/blissota/BlissOTA.apk:system/app/BlissOTA/BlissOTA.apk \
     vendor/bliss/prebuilt/lib/libbypass.so:system/lib/libbypass.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
