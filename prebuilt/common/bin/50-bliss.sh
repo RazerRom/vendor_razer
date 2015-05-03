@@ -7,7 +7,6 @@
 
 #Remove duplicate folder from previous builds:
 rm -rf "/system/priv-app/BlissPapers"
-rm -rf "/system/app/BlissOTA"
 
 . /tmp/backuptool.functions
 
