@@ -168,6 +168,12 @@ PRODUCT_PACKAGES += \
     BlissPapers \
     KernelAdiutor
 
+# BlissRom Platform Library
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.platform-res \
+    org.cyanogenmod.platform \
+    org.cyanogenmod.platform.xml
+
 # BlissRom Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
