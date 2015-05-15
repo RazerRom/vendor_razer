@@ -17,9 +17,7 @@ ifeq ($(strip $(TARGET_TC_ROM)),)
 TARGET_TC_ROM :=4.8-sm
 endif
 
-#tobitege: check multiple versions
-#ifeq (1,$(words $(filter 4.8 4.8-linaro 4.8-sm 4.9 4.9-linaro 4.9-sm,$(TARGET_TC_ROM))))
-ifeq (1,$(words $(filter 4.8 4.8-% 4.9 4.9-%,$(TARGET_TC_ROM))))
+ifeq (1,$(words $(filter 4.8 4.8-% 4.9 4.9-% 5.0 5.0.% 5.0-% 5.1 5.1-% 5.1.% 6.0 6.0.%,$(TARGET_TC_ROM))))
 USE_SM_TOOLCHAIN := true
 ifeq ($(strip $(TARGET_TC_KERNEL)),)
 TARGET_TC_KERNEL :=4.9-sm
@@ -41,13 +39,13 @@ SM_AND := $(shell $(SM_AND_PATH)/bin/arm-linux-androideabi-gcc --version)
 
 # Find strings in version info
 ifneq ($(filter (SaberMod%),$(SM_AND)),)
-SM_AND_VERSION := $(filter 4.8.% 4.8-% 4.9-% 4.9.%,$(SM_AND))
+SM_AND_VERSION := $(filter 4.8.% 4.8-% 4.9-% 4.9.% 5.0.% 5.1.%,$(SM_AND))
 SM_AND_NAME := $(filter (SaberMod%),$(SM_AND))
 SM_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_AND))
 SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
 SM_AND_VERSION := $(SM_AND_VERSION)-$(SM_AND_NAME)-$(SM_AND_DATE)-$(SM_AND_STATUS)
 else
-SM_AND_VERSION := $(filter 4.7 4.7.% 4.8 4.8-% 4.8.% 4.9 4.9-% 4.9.x%,$(SM_AND))
+SM_AND_VERSION := $(filter 4.7 4.7.% 4.8 4.8-% 4.8.% 4.9 4.9-% 4.9.% 5.1-% 5.1.%,$(SM_AND))
 SM_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_AND))
 SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
 SM_AND_VERSION := $(SM_AND_VERSION)-$(SM_AND_DATE)-$(SM_AND_STATUS)
@@ -60,21 +58,18 @@ SM_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_TC_KE
 SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/arm-eabi-gcc --version)
 
 ifneq ($(filter (SaberMod%),$(SM_KERNEL)),)
-SM_KERNEL_VERSION := $(filter 4.7 4.7.% 4.8 4.8.% 4.9 4.9.%,$(SM_KERNEL))
+SM_KERNEL_VERSION := $(filter 4.7 4.7.% 4.8 4.8.% 4.9 4.9.% 5.0.% 5.1.%,$(SM_KERNEL))
 SM_KERNEL_NAME := $(filter (SaberMod%),$(SM_KERNEL))
 SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_KERNEL))
 SM_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(SM_KERNEL))
 SM_KERNEL_VERSION := $(SM_KERNEL_VERSION)-$(SM_KERNEL_NAME)-$(SM_KERNEL_DATE)-$(SM_KERNEL_STATUS)
 else
-SM_KERNEL_VERSION := $(filter 4.7 4.7.% 4.8 4.8.% 4.9 4.9.x%,$(SM_KERNEL))
+SM_KERNEL_VERSION := $(filter 4.7 4.7.% 4.8 4.8.% 4.9 4.9.x% 5.0.% 5.1.% 6.0.0,$(SM_KERNEL))
 SM_KERNEL_NAME := $(filter (Linaro%),$(SM_KERNEL))
 SM_KERNEL_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_KERNEL))
 SM_KERNEL_STATUS := $(filter (release) (prerelease) (experimental),$(SM_KERNEL))
 SM_KERNEL_VERSION := $(SM_KERNEL_VERSION)-$(SM_KERNEL_DATE)-$(SM_KERNEL_STATUS)
 endif
-
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.sm.kernel=$(SM_KERNEL_VERSION)
 
 endif #arm==TARGET_ARCH
 
@@ -90,20 +85,17 @@ SM_AND := $(shell $(SM_AND_PATH)/bin/aarch64-linux-android-gcc --version)
 
 # Find strings in version info
 ifneq ($(filter (SaberMod%),$(SM_AND)),)
-SM_AND_VERSION := $(filter 4.8.3 4.8.4 4.8.5 4.8.6 4.9.1 4.9.2 4.9.3 4.9.4,$(SM_AND))
+SM_AND_VERSION := $(filter 4.8.3 4.8.4 4.8.5 4.8.6 4.9.1 4.9.2 4.9.3 4.9.4 5.0.% 5.1.%,$(SM_AND))
 SM_AND_NAME := $(filter (SaberMod%),$(SM_AND))
 SM_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_AND))
 SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
 SM_AND_VERSION := $(SM_AND_VERSION)-$(SM_AND_NAME)-$(SM_AND_DATE)-$(SM_AND_STATUS)
 else
-SM_AND_VERSION := $(filter 4.7 4.7.% 4.8 4.8.% 4.9 4.9.%,$(SM_AND))
+SM_AND_VERSION := $(filter 4.7 4.7.% 4.8 4.8.% 4.9 4.9.% 5.0 5.0.% 5.1 5.1.%,$(SM_AND))
 SM_AND_DATE := $(filter 20140% 20141% 20150% 20151%,$(SM_AND))
 SM_AND_STATUS := $(filter (release) (prerelease) (experimental),$(SM_AND))
 SM_AND_VERSION := $(SM_AND_VERSION)-$(SM_AND_DATE)-$(SM_AND_STATUS)
 endif
-
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.sm.android=$(SM_AND_VERSION)
 
 endif
 endif #arm64==TARGET_ARCH
@@ -266,7 +258,3 @@ OPT4 := (krait)
 endif
 
 GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)
-#ifneq (,$(GCC_OPTIMIZATION_LEVELS))
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.sm.flags=$(GCC_OPTIMIZATION_LEVELS)
-#endif
