@@ -1,10 +1,10 @@
 #
 # This policy configuration will be used by all products that
-# inherit from CM
+# inherit from RazerRom
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/bliss/sepolicy
+    vendor/razer/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \

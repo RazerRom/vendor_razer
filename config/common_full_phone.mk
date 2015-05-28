@@ -1,5 +1,5 @@
-# Inherit common BlissRom stuff
-$(call inherit-product, vendor/bliss/config/common_full.mk)
+# Inherit common RazerRom stuff
+$(call inherit-product, vendor/razer/config/common_full.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
-        vendor/bliss/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+        vendor/razer/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
 endif
 
-$(call inherit-product, vendor/bliss/config/telephony.mk)
+$(call inherit-product, vendor/razer/config/telephony.mk)

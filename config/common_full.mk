@@ -1,13 +1,13 @@
-# Inherit common BlissRom stuff
-$(call inherit-product, vendor/bliss/config/common.mk)
+# Inherit common RazerRom stuff
+$(call inherit-product, vendor/razer/config/common.mk)
 
-# Include BlissRom audio files
-include vendor/bliss/config/bliss_audio.mk
+# Include RazerRom audio files
+include vendor/razer/config/razer_audio.mk
 
-# Include BlissRom LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
+# Include RazerRom LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/razer/overlay/dictionaries
 
-# Optional BlissRom packages
+# Optional RazerRom packages
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     PhotoPhase
 
-# Extra tools in BlissRom
+# Extra tools in RazerRom
 PRODUCT_PACKAGES += \
     vim \
     zip \

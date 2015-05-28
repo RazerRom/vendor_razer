@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= BlissRom
+PRODUCT_BRAND ?= RazerRom
 
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
@@ -10,7 +10,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/bliss/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/razer/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -27,9 +27,9 @@ endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
 ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
-PRODUCT_BOOTANIMATION := vendor/bliss/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/razer/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
 else
-PRODUCT_BOOTANIMATION := vendor/bliss/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/razer/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
 endif
 endif
 
@@ -68,50 +68,50 @@ endif
 # Backup Tool
 ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bliss/prebuilt/common/bin/50-bliss.sh:system/addon.d/50-bliss.sh \
-    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/bliss/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
-    vendor/bliss/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+    vendor/razer/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/razer/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/razer/prebuilt/common/bin/50-razer.sh:system/addon.d/50-razer.sh \
+    vendor/razer/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/razer/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
+    vendor/razer/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/razer/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/bliss/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/razer/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/razer/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Proprietary latinime lib needed for Keyboard swyping
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/razer/prebuilt/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/razer/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
 # fstrim support
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.d/98fstrim:system/etc/init.d/98fstrim
+    vendor/razer/prebuilt/common/etc/init.d/98fstrim:system/etc/init.d/98fstrim
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-    vendor/bliss/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+    vendor/razer/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/razer/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# BlissRom-specific init file
+# RazerRom-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+    vendor/razer/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/bliss/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/bliss/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/razer/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/razer/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -126,12 +126,12 @@ ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
 endif
 
-# This is BlissRom!
+# This is RazerRom!
 PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/com.bliss.android.xml:system/etc/permissions/com.bliss.android.xml
+    vendor/razer/config/permissions/com.razer.android.xml:system/etc/permissions/com.razer.android.xml
 
 # T-Mobile theme engine
-include vendor/bliss/config/themes_common.mk
+include vendor/razer/config/themes_common.mk
 
 # RomStats
 PRODUCT_PACKAGES += \
@@ -142,21 +142,21 @@ PRODUCT_PACKAGES += \
     #ScreenRecorder \
     #libscreenrecorder
 
-# Required BlissRom packages
+# Required RazerRom packages
 PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     BluetoothExt \
     Profiles
 
-# Optional BlissRom packages
+# Optional RazerRom packages
 PRODUCT_PACKAGES += \
     VoicePlus \
     Basic \
     libemoji \
     Terminal
 
-# Custom BlissRom packages
+# Custom RazerRom packages
 PRODUCT_PACKAGES += \
     AudioFX \
     Camera2 \
@@ -165,21 +165,20 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     OmniSwitch \
-    BlissPapers \
     KernelAdiutor
 
-# BlissRom Platform Library
+# RazerRom Platform Library
 PRODUCT_PACKAGES += \
     org.cyanogenmod.platform-res \
     org.cyanogenmod.platform \
     org.cyanogenmod.platform.xml
 
-# BlissRom Hardware Abstraction Framework
+# RazerRom Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
-# Extra tools in BlissRom
+# Extra tools in RazerRom
 PRODUCT_PACKAGES += \
     libsepol \
     e2fsck \
@@ -240,21 +239,21 @@ PRODUCT_PACKAGES += \
 
 # HFM Files
 PRODUCT_COPY_FILES += \
-	vendor/bliss/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
-	vendor/bliss/prebuilt/etc/hosts.og:system/etc/hosts.og
+	vendor/razer/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
+	vendor/razer/prebuilt/etc/hosts.og:system/etc/hosts.og
 
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/razer/overlay/common
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
-# BlissRom Versioning System
--include vendor/bliss/config/versions.mk
+# RazerRom Versioning System
+-include vendor/razer/config/versions.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
@@ -264,41 +263,41 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 
 # statistics identity
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.romstats.url=http://http://team.blissroms.com/RomStats/website/stats.php \
-    ro.romstats.name=BlissRom \
-    ro.romstats.version=$(BLISS_VERSION) \
+    ro.romstats.url=http://www.razerzone.com/ca-en \
+    ro.romstats.name=RazerRom \
+    ro.romstats.version=$(RAZER_VERSION) \
     ro.romstats.askfirst=0 \
     ro.romstats.tframe=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.bliss.version=$(BLISS_VERSION)
+    ro.razer.version=$(RAZER_VERSION)
     
 #
-# BlissRom Extras
+# RazerRom Extras
 #
 
 # A Better Camera
 #PRODUCT_COPY_FILES += \
-#    vendor/bliss/prebuilt/common/ABCamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmalib.so:system/lib/libalmalib.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmashot-night.so:system/lib/libalmashot-night.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libbestshot.so:system/lib/libbestshot.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libhiresportrait.so:system/lib/libhireportrait.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libhistogram.so:system/lib/libhistogram.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libpreshot.so:system/lib/libpreshot.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libswapheap.so:system/lib/libswapheap.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libutils-image.so:system/lib/libutils-image.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
-#    vendor/bliss/prebuilt/common/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
+#    vendor/razer/prebuilt/common/ABCamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
+#    vendor/razer/prebuilt/common/ABCamera/libalmalib.so:system/lib/libalmalib.so \
+#    vendor/razer/prebuilt/common/ABCamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
+#    vendor/razer/prebuilt/common/ABCamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
+#    vendor/razer/prebuilt/common/ABCamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
+#    vendor/razer/prebuilt/common/ABCamera/libalmashot-night.so:system/lib/libalmashot-night.so \
+#    vendor/razer/prebuilt/common/ABCamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
+#    vendor/razer/prebuilt/common/ABCamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
+#    vendor/razer/prebuilt/common/ABCamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
+#    vendor/razer/prebuilt/common/ABCamera/libbestshot.so:system/lib/libbestshot.so \
+#    vendor/razer/prebuilt/common/ABCamera/libhiresportrait.so:system/lib/libhireportrait.so \
+#    vendor/razer/prebuilt/common/ABCamera/libhistogram.so:system/lib/libhistogram.so \
+#    vendor/razer/prebuilt/common/ABCamera/libpreshot.so:system/lib/libpreshot.so \
+#    vendor/razer/prebuilt/common/ABCamera/libswapheap.so:system/lib/libswapheap.so \
+#    vendor/razer/prebuilt/common/ABCamera/libutils-image.so:system/lib/libutils-image.so \
+#    vendor/razer/prebuilt/common/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
+#    vendor/razer/prebuilt/common/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
 
-# BlissRom property overides
+# RazerRom property overides
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.bg_apps_limit=24 \
     pm.sleep.mode=1 \
@@ -325,34 +324,34 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ES File Explorer
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/app/ESFileExplorer.apk:system/app/ESFileExplorer/ESFileExplorer.apk
+    vendor/razer/prebuilt/common/app/ESFileExplorer.apk:system/app/ESFileExplorer/ESFileExplorer.apk
 
 # L Speed
 #PRODUCT_COPY_FILES += \
-#    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/kernelTweaks.log:data/Tweaks/kernelTweaks.log \
-#    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/ram_manager.log:data/Tweaks/ram_manager.log \
-#    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/Seeder_v7.log:data/Tweaks/Seeder_v7.log \
-#    vendor/bliss/prebuilt/common/L_speed/data/Tweaks/zipalign.log:data/Tweaks/zipalign.log \
-#    vendor/bliss/prebuilt/common/L_speed/system/bin/seeder:system/bin/seeder \
-#    vendor/bliss/prebuilt/common/L_speed/system/bin/uninstaller:system/bin/uninstaller \
-#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/01kernelTweaks:system/etc/init.d/01kernelTweaks \
-#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/02zipalign:system/etc/init.d/02zipalign \
-#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/03ram_manager:system/etc/init.d/03ram_manager \
-#    vendor/bliss/prebuilt/common/L_speed/system/etc/init.d/Seeder:system/etc/init.d/Seeder \
-#    vendor/bliss/prebuilt/common/L_speed/system/etc/seeder_scripts/Seeder:system/etc/seeder_scripts/Seeder \
-#    vendor/bliss/prebuilt/common/L_speed/system/xbin/entro:system/xbin/entro \
-#    vendor/bliss/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
-#    vendor/bliss/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
-#    vendor/bliss/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
+#    vendor/razer/prebuilt/common/L_speed/data/Tweaks/kernelTweaks.log:data/Tweaks/kernelTweaks.log \
+#    vendor/razer/prebuilt/common/L_speed/data/Tweaks/ram_manager.log:data/Tweaks/ram_manager.log \
+#    vendor/razer/prebuilt/common/L_speed/data/Tweaks/Seeder_v7.log:data/Tweaks/Seeder_v7.log \
+#    vendor/razer/prebuilt/common/L_speed/data/Tweaks/zipalign.log:data/Tweaks/zipalign.log \
+#    vendor/razer/prebuilt/common/L_speed/system/bin/seeder:system/bin/seeder \
+#    vendor/razer/prebuilt/common/L_speed/system/bin/uninstaller:system/bin/uninstaller \
+#    vendor/razer/prebuilt/common/L_speed/system/etc/init.d/01kernelTweaks:system/etc/init.d/01kernelTweaks \
+#    vendor/razer/prebuilt/common/L_speed/system/etc/init.d/02zipalign:system/etc/init.d/02zipalign \
+#    vendor/razer/prebuilt/common/L_speed/system/etc/init.d/03ram_manager:system/etc/init.d/03ram_manager \
+#    vendor/razer/prebuilt/common/L_speed/system/etc/init.d/Seeder:system/etc/init.d/Seeder \
+#    vendor/razer/prebuilt/common/L_speed/system/etc/seeder_scripts/Seeder:system/etc/seeder_scripts/Seeder \
+#    vendor/razer/prebuilt/common/L_speed/system/xbin/entro:system/xbin/entro \
+#    vendor/razer/prebuilt/common/L_speed/system/xbin/openvpn:system/xbin/openvpn \
+#    vendor/razer/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
+#    vendor/razer/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
 
 # Nova Launcher
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
+    vendor/razer/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
 
 # Poweramp
 #PRODUCT_COPY_FILES += \
-#    vendor/bliss/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
+#    vendor/razer/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
 
 # Quick Pic
 #PRODUCT_COPY_FILES += \
-#    vendor/bliss/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
+#    vendor/razer/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk

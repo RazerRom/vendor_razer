@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# Squish a CM otapackage for distribution
+# Squish a RazerRom otapackage for distribution
 # cyanogen
 
-. $ANDROID_BUILD_TOP/vendor/bliss/tools/colors
+. $ANDROID_BUILD_TOP/vendor/razer/tools/colors
 
 OUT_TARGET_HOST=`uname -s`
 if [ x"$OUT_TARGET_HOST" = x"Linux" ]
@@ -24,7 +24,7 @@ if [ -z "$OUT" -o ! -d "$OUT" ]; then
 	exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/bliss/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/razer/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 

@@ -100,7 +100,7 @@ endif
 endif
 endif #arm64==TARGET_ARCH
 
-ifeq ($(strip $(BLISS_GRAPHITE)),true)
+ifeq ($(strip $(RAZER_GRAPHITE)),true)
 OPT1 := (graphite)
 GRAPHITE_FLAGS := \
   -fgraphite \
@@ -111,7 +111,7 @@ GRAPHITE_FLAGS := \
   -floop-interchange \
   -floop-strip-mine \
   -floop-block
-ifeq ($(strip $(BLISSIFY)),true)
+ifeq ($(strip $(RAZERFY)),true)
   GRAPHITE_FLAGS += \
     -Wno-error=maybe-uninitialized
 endif
@@ -245,15 +245,15 @@ ifeq (1,$(words $(filter 4.9 4.9-sm,$(TARGET_TC_ROM))))
     libFraunhoferAAC
 endif
 
-ifeq (true,$(BLISS_O3))
+ifeq (true,$(RAZER_O3))
 OPT3 := (O3)
 endif
 
-ifeq (true,$(BLISS_STRICT))
+ifeq (true,$(RAZER_STRICT))
 OPT2 := (strict)
 endif
 
-ifeq (true,$(BLISS_KRAIT))
+ifeq (true,$(RAZER_KRAIT))
 OPT4 := (krait)
 endif
 

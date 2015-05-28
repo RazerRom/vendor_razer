@@ -1,10 +1,10 @@
 #!/bin/bash
 #
-# Super-mega LiquidSmooth opticharger of doom
+# Super-mega RazerRom opticharger of doom
 # Shrinks apks by running pngquant or pngcrush or optipng or pngout on png images
 #
 
-. $ANDROID_BUILD_TOP/vendor/bliss/tools/colors
+. $ANDROID_BUILD_TOP/vendor/razer/tools/colors
 
 OUT_TARGET_HOST=$(uname -a | grep Darwin)
 if [ -z "$OUT_TARGET_HOST" ]
