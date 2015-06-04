@@ -145,7 +145,6 @@ PRODUCT_PACKAGES += \
 # Required RazerRom packages
 PRODUCT_PACKAGES += \
     Development \
-    LatinIME \
     BluetoothExt \
     Profiles
 

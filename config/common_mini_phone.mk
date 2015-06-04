@@ -4,6 +4,10 @@ $(call inherit-product, vendor/razer/config/common.mk)
 # Include Razer audio files
 include vendor/razer/config/razer_audio.mk
 
+# Required RazerRom packages
+PRODUCT_PACKAGES += \
+    LatinIME
+
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Argon.ogg \

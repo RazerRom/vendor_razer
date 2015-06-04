@@ -1,6 +1,13 @@
 # Inherit common RazerRom stuff
 $(call inherit-product, vendor/razer/config/common_full.mk)
 
+# Required RazerRom packages
+PRODUCT_PACKAGES += \
+    LatinIME
+
+# Include RazerRom LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
+
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Io.ogg \
