@@ -271,6 +271,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.razer.version=$(RAZER_VERSION)
+
+ifndef CM_PLATFORM_SDK_VERSION
+  # This is the canonical definition of the SDK version, which defines
+  # the set of APIs and functionality available in the platform.  It
+  # is a single integer that increases monotonically as updates to
+  # the SDK are released.  It should only be incremented when the APIs for
+  # the new release are frozen (so that developers don't write apps against
+  # intermediate builds).
+  CM_PLATFORM_SDK_VERSION := 1
+endif
+
+# CyanogenMod Platform SDK Version
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
+
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
+
+-include vendor/cyngn/product.mk
+
+$(call prepend-product-if-exists, vendor/extra/product.mk)
     
 #
 # RazerRom Extras
