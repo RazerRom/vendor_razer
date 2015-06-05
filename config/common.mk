@@ -323,6 +323,16 @@ BLISS_ROM_NAME    := BlissPop
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/lib/libbypass.so:system/lib/libbypass.so
 
+ifndef CM_PLATFORM_SDK_VERSION
+  # This is the canonical definition of the SDK version, which defines
+  # the set of APIs and functionality available in the platform.  It
+  # is a single integer that increases monotonically as updates to
+  # the SDK are released.  It should only be incremented when the APIs for
+  # the new release are frozen (so that developers don't write apps against
+  # intermediate builds).
+  CM_PLATFORM_SDK_VERSION := 1
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.systemname=$(BLISS_ROM_NAME) \
     ro.ota.version=$(BLISS_OTA_VERSION) \
@@ -333,3 +343,13 @@ export BLISS_OTA_ROM=$(BLISS_ROM_NAME)
 export BLISS_OTA_VERNAME=$(BLISS_VERSION)
 export BLISS_OTA_VER=$(BLISS_OTA_VERSION)
 export BLISS_OTA_URL=$(BLISS_DEVICE_URL)/$(BLISS_VERSION).zip
+
+# CyanogenMod Platform SDK Version
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
+
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
+
+-include vendor/cyngn/product.mk
+
+$(call prepend-product-if-exists, vendor/extra/product.mk)
