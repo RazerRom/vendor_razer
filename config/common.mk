@@ -320,8 +320,17 @@ endif
 BLISS_OTA_VERSION := $(shell date +%Y%m%d%H)
 BLISS_ROM_NAME    := BlissPop
 
+# Lib For Webview
+ifeq ($(OTA_64),true)
+TARGET_ARCH_ABI := arm64-v8a
+TARGET_LIB_DIR := lib64
+else
+TARGET_ARCH_ABI := armeabi-v7a
+TARGET_LIB_DIR := lib
+endif
+
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/lib/libbypass.so:system/lib/libbypass.so
+    vendor/bliss/prebuilt/$(TARGET_LIB_DIR)/$(TARGET_ARCH_ABI)/libbypass.so:system/$(TARGET_LIB_DIR)/libbypass.so
 
 ifndef CM_PLATFORM_SDK_VERSION
   # This is the canonical definition of the SDK version, which defines
