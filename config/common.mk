@@ -134,8 +134,8 @@ PRODUCT_COPY_FILES += \
 include vendor/razer/config/themes_common.mk
 
 # RomStats
-PRODUCT_PACKAGES += \
-    RomStats
+#PRODUCT_PACKAGES += \
+#    RomStats
 
 # Screen recorder
 #PRODUCT_PACKAGES += \
@@ -261,12 +261,12 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 $(call prepend-product-if-exists, vendor/extra/product.mk)
 
 # statistics identity
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.romstats.url=http://www.razerzone.com/ca-en \
-    ro.romstats.name=RazerRom \
-    ro.romstats.version=$(RAZER_VERSION) \
-    ro.romstats.askfirst=0 \
-    ro.romstats.tframe=1
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.romstats.url=http://www.razerzone.com/ca-en \
+#    ro.romstats.name=RazerRom \
+#    ro.romstats.version=$(RAZER_VERSION) \
+#    ro.romstats.askfirst=0 \
+#    ro.romstats.tframe=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
