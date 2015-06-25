@@ -158,8 +158,8 @@ PRODUCT_COPY_FILES += \
 include vendor/bliss/config/themes_common.mk
 
 # RomStats
-PRODUCT_PACKAGES += \
-    RomStats
+#PRODUCT_PACKAGES += \
+#    RomStats
 
 # Screen recorder
 #PRODUCT_PACKAGES += \
@@ -272,7 +272,7 @@ PRODUCT_PACKAGES += \
 
 # HFM Files
 PRODUCT_COPY_FILES += \
-	vendor/bliss/prebuilt/etc/xtwifi.conf:system/etc/xtwifi.conf
+    vendor/bliss/prebuilt/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 endif
 
@@ -294,12 +294,12 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 $(call prepend-product-if-exists, vendor/extra/product.mk)
 
 # statistics identity
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.romstats.url=http://http://team.blissroms.com/RomStats/website/stats.php \
-    ro.romstats.name=BlissPop \
-    ro.romstats.version=$(BLISS_VERSION) \
-    ro.romstats.askfirst=0 \
-    ro.romstats.tframe=1
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.romstats.url=http://http://team.blissroms.com/RomStats/website/stats.php \
+#    ro.romstats.name=BlissPop \
+#    ro.romstats.version=$(BLISS_VERSION) \
+#    ro.romstats.askfirst=0 \
+#    ro.romstats.tframe=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
