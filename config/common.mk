@@ -158,11 +158,9 @@ PRODUCT_PACKAGES += \
 # Custom RazerRom packages
 PRODUCT_PACKAGES += \
     AudioFX \
-#    Camera2 \
     CMWallpapers \
     Eleven \
     LockClock \
-    CMAccount \
     OmniSwitch \
     KernelAdiutor
 
@@ -369,28 +367,12 @@ PRODUCT_COPY_FILES += \
 
 # Oppo Camera
 PRODUCT_COPY_FILES += \
-    vendor/razer/prebuilt/common/OppoCamera/OppoCamera.apk:system/app/OppoCamera/OppoCamera.apk \
-#Plugins
-PRODUCT_COPY_FILES += \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/DoubleExposureCamera.apk:system/app/OppoCamera/Plugins/DoubleExposureCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/FaceBeautyCamera.apk:system/app/OppoCamera/Plugins/FaceBeautyCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/FilterCamera.apk:system/app/OppoCamera/Plugins/FilterCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/GifCamera.apk:system/app/OppoCamera/Plugins/GifCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/HDRCamera.apk:system/app/OppoCamera/Plugins/HDRCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/MicrospurCamera.apk:system/app/OppoCamera/Plugins/MicrospurCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/NightCamera.apk:system/app/OppoCamera/Plugins/NightCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/PasserbyMode.apk:system/app/OppoCamera/Plugins/PasserbyMode.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/PicturePlus.apk:system/app/OppoCamera/Plugins/PicturePlus.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/ProfessionalCamera.apk:system/app/OppoCamera/Plugins/ProfessionalCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/RawCamera.apk:system/app/OppoCamera/Plugins/RawCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/SlowShutterCamera.apk:system/app/OppoCamera/Plugins/SlowShutterCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/SuperZoomCamera.apk:system/app/OppoCamera/Plugins/SuperZoomCamera.apk \
-    vendor/razer/prebuilt/common/OppoCamera/Plugins/VoiceBeautyCamera.apk:system/app/OppoCamera/Plugins/VoiceBeautyCamera.apk
+    vendor/razer/prebuilt/common/OppoCamera/OppoCamera.apk:system/app/OppoCamera/OppoCamera.apk
 
 # Poweramp
-#PRODUCT_COPY_FILES += \
-#    vendor/razer/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
 
 # Quick Pic
-#PRODUCT_COPY_FILES += \
-#    vendor/razer/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
