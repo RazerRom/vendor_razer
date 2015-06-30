@@ -290,29 +290,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
     
-#
-# RazerRom Extras
-#
-
-# A Better Camera
-#PRODUCT_COPY_FILES += \
-#    vendor/razer/prebuilt/common/ABCamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
-#    vendor/razer/prebuilt/common/ABCamera/libalmalib.so:system/lib/libalmalib.so \
-#    vendor/razer/prebuilt/common/ABCamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
-#    vendor/razer/prebuilt/common/ABCamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
-#    vendor/razer/prebuilt/common/ABCamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
-#    vendor/razer/prebuilt/common/ABCamera/libalmashot-night.so:system/lib/libalmashot-night.so \
-#    vendor/razer/prebuilt/common/ABCamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
-#    vendor/razer/prebuilt/common/ABCamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
-#    vendor/razer/prebuilt/common/ABCamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
-#    vendor/razer/prebuilt/common/ABCamera/libbestshot.so:system/lib/libbestshot.so \
-#    vendor/razer/prebuilt/common/ABCamera/libhiresportrait.so:system/lib/libhireportrait.so \
-#    vendor/razer/prebuilt/common/ABCamera/libhistogram.so:system/lib/libhistogram.so \
-#    vendor/razer/prebuilt/common/ABCamera/libpreshot.so:system/lib/libpreshot.so \
-#    vendor/razer/prebuilt/common/ABCamera/libswapheap.so:system/lib/libswapheap.so \
-#    vendor/razer/prebuilt/common/ABCamera/libutils-image.so:system/lib/libutils-image.so \
-#    vendor/razer/prebuilt/common/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
-#    vendor/razer/prebuilt/common/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
+###################
+# RazerRom Extras #
+###################
 
 # RazerRom property overides
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -339,10 +319,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true \
     persist.sys.dun.override=0
 
-# ES File Explorer
-PRODUCT_COPY_FILES += \
-    vendor/razer/prebuilt/common/app/ESFileExplorer.apk:system/app/ESFileExplorer/ESFileExplorer.apk
-
 # L Speed
 #PRODUCT_COPY_FILES += \
 #    vendor/razer/prebuilt/common/L_speed/data/Tweaks/kernelTweaks.log:data/Tweaks/kernelTweaks.log \
@@ -361,18 +337,59 @@ PRODUCT_COPY_FILES += \
 #    vendor/razer/prebuilt/common/L_speed/system/xbin/rngd:system/xbin/rngd \
 #    vendor/razer/prebuilt/common/L_speed/system/xbin/zipalign:system/xbin/zipalign
 
+#        #
+## Apps ##
+#        #
+
+# A Better Camera
+#PRODUCT_COPY_FILES += \
+#    vendor/razer/prebuilt/common/app/ABCamera/ABCamera.apk:system/app/ABCamera/ABCamera.apk \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmalib.so:system/lib/libalmalib.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmashot-clr.so:system/lib/libalmashot-clr.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmashot-dro.so:system/lib/libalmashot-dro.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmashot-hdr.so:system/lib/libalmashot-hdr.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmashot-night.so:system/lib/libalmashot-night.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmashot-pano.so:system/lib/libalmashot-pano.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmashot-seamless.so:system/lib/libalmashot-seamless.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libalmashot-sequence.so:system/lib/libalmashot-sequence.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libbestshot.so:system/lib/libbestshot.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libhiresportrait.so:system/lib/libhireportrait.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libhistogram.so:system/lib/libhistogram.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libpreshot.so:system/lib/libpreshot.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libswapheap.so:system/lib/libswapheap.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libutils-image.so:system/lib/libutils-image.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libutils-jni.so:system/lib/libutils-jni.so \
+#    vendor/razer/prebuilt/common/app/ABCamera/libyuvimage.so:system/lib/libyuvimage.so
+
+# ES File Explorer
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/common/app/ESFileExplorer/ESFileExplorer.apk:system/app/ESFileExplorer/ESFileExplorer.apk \
+    vendor/razer/prebuilt/common/app/ESFileExplorer/libmyaes.so:system/lib/libmyaes.so
+
 # Nova Launcher
 PRODUCT_COPY_FILES += \
     vendor/razer/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
 
 # Oppo Camera
-#PRODUCT_COPY_FILES += \
-#    vendor/razer/prebuilt/common/OppoCamera/OppoCamera.apk:system/app/OppoCamera/OppoCamera.apk
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/common/app/OppoCamera/OppoCamera.apk:system/app/OppoCamera/OppoCamera.apk \
+    vendor/razer/prebuilt/common/app/OppoCamera/libcapsjava.so:system/lib/libcapsjava.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/libdocSrv.so:system/lib/libdocSrv.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/libgaussgraphic.so:system/lib/libgaussgraphic.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/libIvw30.so:system/lib/libIvw30.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/libjni_eglfence.so:system/lib/libjni_eglfence.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/liboppoexif_jni.so:system/lib/liboppoexif_jni.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/librotationUtil.so:system/lib/librotationUtil.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/libscaladoSrv.so:system/lib/libscaladoSrv.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/libtbdecode.so:system/lib/libtbdecode.so \
+    vendor/razer/prebuilt/common/app/OppoCamera/libVDObjectTrackerAPI-jni.so:system/lib/libVDObjectTrackerAPI-jni.so
 
 # Poweramp
 PRODUCT_COPY_FILES += \
-    vendor/razer/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
+    vendor/razer/prebuilt/common/app/Poweramp/Poweramp.apk:system/app/Poweramp/Poweramp.apk \
+    vendor/razer/prebuilt/common/app/Poweramp/libstubnotused.so:system/lib/libstubnotused.so
 
 # Quick Pic
-#PRODUCT_COPY_FILES += \
-#    vendor/razer/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/common/app/QuickPic/QuickPic.apk:system/app/QuickPic/QuickPic.apk \
+    vendor/razer/prebuilt/common/app/QuickPic/libqpicjni156.so:system/lib/libqpicjni156.so
