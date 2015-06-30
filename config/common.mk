@@ -366,13 +366,13 @@ PRODUCT_COPY_FILES += \
     vendor/razer/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
 
 # Oppo Camera
-PRODUCT_COPY_FILES += \
-    vendor/razer/prebuilt/common/OppoCamera/OppoCamera.apk:system/app/OppoCamera/OppoCamera.apk
+#PRODUCT_COPY_FILES += \
+#    vendor/razer/prebuilt/common/OppoCamera/OppoCamera.apk:system/app/OppoCamera/OppoCamera.apk
 
 # Poweramp
 PRODUCT_COPY_FILES += \
     vendor/razer/prebuilt/common/app/Poweramp.apk:system/app/Poweramp/Poweramp.apk
 
 # Quick Pic
-PRODUCT_COPY_FILES += \
-    vendor/razer/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
+#PRODUCT_COPY_FILES += \
+#    vendor/razer/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk
