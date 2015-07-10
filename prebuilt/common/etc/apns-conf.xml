@@ -332,7 +332,11 @@
   <apn carrier="3 AT" mcc="232" mnc="10" apn="drei.at" server="http://mobile.drei.at" mmsc="http://mmsc" mmsproxy="213.094.078.133" mmsport="8799" type="default,supl,mms" />
   <apn carrier="Bob" mcc="232" mnc="11" apn="bob.at" user="data@bob.at" password="ppp" server="http://start.bob.at/" type="default,supl" />
   <apn carrier="Bob MMS" mcc="232" mnc="11" apn="mms.bob.at" user="data@bob.at" password="web" server="http://start.bob.at/" proxy="194.48.124.7" port="8001" mmsc="http://mmsc.bob.at" mmsproxy="194.48.124.7" mmsport="8001" type="mms" />
-  <apn carrier="Yesss" mcc="232" mnc="12" apn="web.yesss.at" type="default,supl" />
+  <apn carrier="Orange World" mcc="232" mnc="12" apn="orange.world" proxy="194.24.128.118" port="80" mmsproxy="" mmsport="" mmsc="" server="" user="wap" password="wap" authtype="3" type="default,supl" />
+  <apn carrier="Orange Web" mcc="232" mnc="12" apn="orange.web" proxy="" port="" mmsproxy="" mmsport="" mmsc="" server="" user="web" password="web" authtype="3" type="default,supl" />
+  <apn carrier="Orange MMS" mcc="232" mnc="12" apn="orange.mms" proxy="" port="" mmsproxy="194.24.128.118" mmsport="8080" mmsc="http://mmsc.orange.at/mms/wapenc" server="" user="mms" password="mms" authtype="3" type="mms" />
+  <apn carrier="Orange Video" mcc="232" mnc="12" apn="orange.video" proxy="" port="" mmsproxy="" mmsport="" mmsc="" server="" user="video" password="" authtype="3" type="default,supl" />
+  <apn carrier="Yesss" mcc="232" mnc="12" apn="webapn.at" type="default,supl" />
   <apn carrier="UBIQUISYS" mcc="234" mnc="01" apn="internet" type="default,supl,mms" />
   <apn carrier="Tesco UK" mcc="234" mnc="01" apn="prepay.tesco-mobile.com" user="tescowap" password="password" server="http://wap.tesco-mobile.com/" proxy="193.113.200.195" port="9201" type="default,supl,mms" />
   <apn carrier="Vectone Mobile" mcc="234" mnc="01" apn="webuk.mundio.com" type="default,supl" />
