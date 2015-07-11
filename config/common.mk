@@ -137,7 +137,10 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/config/permissions/com.bliss.android.xml:system/etc/permissions/com.bliss.android.xml
 
 # T-Mobile theme engine
-include vendor/bliss/config/themes_common.mk
+-include vendor/bliss/config/themes_common.mk
+
+# Bliss Audio Mods
+-include vendor/bliss/config/bliss_audio_mod.mk
 
 # RomStats
 #PRODUCT_PACKAGES += \
@@ -166,7 +169,6 @@ PRODUCT_PACKAGES += \
     Camera2 \
     Launcher3 \
     Trebuchet \
-    AudioFX \
     CMWallpapers \
     CMFileManager \
     Eleven \

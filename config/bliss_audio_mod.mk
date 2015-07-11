@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 # V4A files
+ifeq (viper, $(BLISS_AUDIO_MOD))
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/V4A/etc/audio_effects.conf:system/etc/audio_effects.conf \
     vendor/bliss/prebuilt/V4A/etc/audio_policy.conf:system/etc/audio_policy.conf \
@@ -29,5 +29,9 @@ PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/V4A/lib/soundfx/libvisualizer.so:system/lib/soundfx/libvisualizer.so \
     vendor/bliss/prebuilt/V4A/priv-app/ViPER4Android/ViPER4Android.apk:system/priv-app/ViPER4Android/ViPER4Android.apk \
     vendor/bliss/prebuilt/V4A/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
-
+else
+# AudioFX
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
 
