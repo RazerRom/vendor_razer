@@ -193,7 +193,8 @@ PRODUCT_PACKAGES += \
     KernelAdiutor \
     OmniSwitch \
     BlissPapers \
-    BlissOTA
+    BlissOTA \
+    WallpaperPicker
 
 # Extra tools in Bliss
 PRODUCT_PACKAGES += \
