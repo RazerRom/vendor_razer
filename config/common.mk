@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= bliss
+PRODUCT_BRAND ?= razer
 
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
@@ -10,7 +10,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/bliss/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/razer/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -27,9 +27,9 @@ endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
 ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
-PRODUCT_BOOTANIMATION := vendor/bliss/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/razer/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
 else
-PRODUCT_BOOTANIMATION := vendor/bliss/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/razer/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
 endif
 endif
 
@@ -43,6 +43,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# Google property overides
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -51,10 +52,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
-    ro.setupwizard.network_required=false \
-    ro.setupwizard.gservices_delay=-1 \
-    dalvik.vm.image-dex2oat-filter=everything \
-    dalvik.vm.dex2oat-filter=everything
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
@@ -70,54 +67,50 @@ endif
 # Backup Tool
 ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bliss/prebuilt/common/bin/50-bliss.sh:system/addon.d/50-bliss.sh \
-    vendor/bliss/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/bliss/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
-    vendor/bliss/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+    vendor/razer/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/razer/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/razer/prebuilt/common/bin/50-razer.sh:system/addon.d/50-razer.sh \
+    vendor/razer/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/razer/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
+    vendor/razer/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/razer/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/bliss/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/razer/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/razer/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Proprietary latinime lib needed for Keyboard swyping
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/razer/prebuilt/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/razer/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
 # fstrim support
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.d/98fstrim:system/etc/init.d/98fstrim
+    vendor/razer/prebuilt/common/etc/init.d/98fstrim:system/etc/init.d/98fstrim
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-    vendor/bliss/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+    vendor/razer/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/razer/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# Blissful Wallpapers
+# Razer-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/blisspapers/BlissPapers.apk:system/app/BlissPapers/BlissPapers.apk
-
-# Bliss-specific init file
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+    vendor/razer/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/bliss/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/bliss/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/razer/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/razer/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -132,15 +125,15 @@ ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
 endif
 
-# This is Bliss!
+# This is RazerRom!
 PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/com.bliss.android.xml:system/etc/permissions/com.bliss.android.xml
+    vendor/razer/config/permissions/com.razer.android.xml:system/etc/permissions/com.razer.android.xml
 
 # T-Mobile theme engine
--include vendor/bliss/config/themes_common.mk
+-include vendor/razer/config/themes_common.mk
 
-# Bliss Audio Mods
--include vendor/bliss/config/bliss_audio_mod.mk
+# RazerRom Audio Mods
+-include vendor/razer/config/razer_audio_mod.mk
 
 # RomStats
 #PRODUCT_PACKAGES += \
@@ -166,16 +159,7 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    Camera2 \
-    Launcher3 \
-    Trebuchet \
-    CMWallpapers \
-    CMFileManager \
-    Eleven \
-    LockClock \
-    CMAccount \
-    CMHome \
-    MonthCalendarWidget
+    LockClock
 
 # CM Platform Library
 PRODUCT_PACKAGES += \
@@ -192,11 +176,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     KernelAdiutor \
     OmniSwitch \
-    BlissPapers \
-    BlissOTA \
     WallpaperPicker
 
-# Extra tools in Bliss
+# Extra tools in RazerRom
 PRODUCT_PACKAGES += \
     libsepol \
     e2fsck \
@@ -260,20 +242,21 @@ PRODUCT_PACKAGES += \
 
 # HFM Files
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/etc/xtwifi.conf:system/etc/xtwifi.conf
+    vendor/razer/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
+    vendor/razer/prebuilt/etc/hosts.og:system/etc/hosts.og
 
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/razer/overlay/common
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
-# BLISS Versioning System
--include vendor/bliss/config/versions.mk
+# RazerRom Versioning System
+-include vendor/razer/config/versions.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
@@ -283,42 +266,15 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 
 # statistics identity
 #PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.romstats.url=http://http://team.blissroms.com/RomStats/website/stats.php \
-#    ro.romstats.name=BlissPop \
-#    ro.romstats.version=$(BLISS_VERSION) \
+#    ro.romstats.url=http://www.razerzone.com/ca-en \
+#    ro.romstats.name=RazerRom \
+#    ro.romstats.version=$(RAZER_VERSION) \
 #    ro.romstats.askfirst=0 \
 #    ro.romstats.tframe=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.bliss.version=$(BLISS_VERSION)
-
-# Team Bliss OTA Updater
-ifeq ($(BLISS_DONATE),)
-  BLISS_DONATE =: http://goo.gl/tymMFo
-endif
-BLISS_OTA_BUILDDIR := Official
-ifeq ($(BLISS_BUILDTYPE),NIGHTLY)
-  BLISS_OTA_BUILDDIR := Nightlies
-endif
-BLISS_BASE_URL    := http://downloads.blissroms.com/BlissPop
-ifeq ($(BLISS_DEVICE_URL),)
-  BLISS_DEVICE_URL := $(BLISS_BASE_URL)/$(BLISS_OTA_BUILDDIR)/$(TARGET_DEVICE)
-endif
-BLISS_OTA_VERSION := $(shell date +%Y%m%d%H)
-BLISS_ROM_NAME    := BlissPop
-
-# Lib For Webview
-ifeq ($(OTA_64),true)
-TARGET_ARCH_ABI := arm64-v8a
-TARGET_LIB_DIR := lib64
-else
-TARGET_ARCH_ABI := armeabi-v7a
-TARGET_LIB_DIR := lib
-endif
-
-PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/$(TARGET_LIB_DIR)/$(TARGET_ARCH_ABI)/libbypass.so:system/$(TARGET_LIB_DIR)/libbypass.so
+    ro.razer.version=$(RAZER_VERSION)
 
 ifndef CM_PLATFORM_SDK_VERSION
   # This is the canonical definition of the SDK version, which defines
@@ -330,17 +286,6 @@ ifndef CM_PLATFORM_SDK_VERSION
   CM_PLATFORM_SDK_VERSION := 2
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.ota.systemname=$(BLISS_ROM_NAME) \
-    ro.ota.version=$(BLISS_OTA_VERSION) \
-    ro.ota.device=$(TARGET_DEVICE) \
-    ro.ota.manifest=$(BLISS_DEVICE_URL)/ota$(BLISS_OTA_XMLVER).xml
-
-export BLISS_OTA_ROM=$(BLISS_ROM_NAME)
-export BLISS_OTA_VERNAME=$(BLISS_VERSION)
-export BLISS_OTA_VER=$(BLISS_OTA_VERSION)
-export BLISS_OTA_URL=$(BLISS_DEVICE_URL)/$(BLISS_VERSION).zip
-
 # CyanogenMod Platform SDK Version
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
@@ -350,3 +295,57 @@ PRODUCT_PROPERTY_OVERRIDES += \
 -include vendor/cyngn/product.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
+
+##                     ##
+#- Gamerman123x Extras -# 
+##                     ##
+
+# Razer property overides
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.bg_apps_limit=24 \
+    pm.sleep.mode=1 \
+    wifi.supplicant_scan_interval=180 \
+    windowsmgr.max_events_per_sec=150 \
+    debug.performance.tuning=1 \
+    ro.ril.power_collapse=1 \
+    persist.service.lgospd.enable=0 \
+    persist.service.pcsync.enable=0 \
+    ro.facelock.black_timeout=400 \
+    ro.facelock.det_timeout=1500 \
+    ro.facelock.rec_timeout=2500 \
+    ro.facelock.lively_timeout=2500 \
+    ro.facelock.est_max_time=600 \
+    ro.facelock.use_intro_anim=false \
+    ro.setupwizard.network_required=false \
+    ro.setupwizard.gservices_delay=-1 \
+    net.tethering.noprovisioning=true \
+    persist.sys.dun.override=0
+    dalvik.vm.profiler=1 \
+    dalvik.vm.isa.arm.features=lpae,div \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-filter=everything
+
+# CameraNextMod
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/CameraNextMod/CameraNextMod.apk:system/app/CameraNextMod/CameraNextMod.apk \
+    vendor/razer/prebuilt/CameraNextMod/libjni_mosaic_next.so:system/lib/libjni_mosaic_next.so \
+    vendor/razer/prebuilt/CameraNextMod/libjni_tinyplanet_next.so:system/lib/libjni_tinyplanet_next.so
+
+# ES File Explorer
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/ESFileExplorer/ESFileExplorer.apk:system/app/ESFileExplorer/ESFileExplorer.apk \
+    vendor/razer/prebuilt/ESFileExplorer/libmyaes.so:system/lib/libmyaes.so
+
+# Nova Launcher
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
+
+# Poweramp
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/Poweramp/Poweramp.apk:system/app/Poweramp/Poweramp.apk \
+    vendor/razer/prebuilt/Poweramp/libstubnotused.so:system/lib/libstubnotused.so
+
+# Quick Pic
+PRODUCT_COPY_FILES += \
+    vendor/razer/prebuilt/QuickPic/QuickPic.apk:system/app/QuickPic/QuickPic.apk \
+    vendor/razer/prebuilt/QuickPic/libqpicjni156.so:system/lib/libqpicjni156.so

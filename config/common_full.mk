@@ -1,24 +1,15 @@
-# Inherit common Bliss stuff
-$(call inherit-product, vendor/bliss/config/common.mk)
+# Inherit common Razer stuff
+$(call inherit-product, vendor/razer/config/common.mk)
 
-# Include Bliss audio files
-include vendor/bliss/config/bliss_audio.mk
+# Include Razer audio files
+include vendor/razer/config/razer_audio.mk
 
-# Optional Bliss packages
+# Optional Razer packages
 PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
-    LiveWallpapers \
     LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
-    VisualizationWallpapers \
-    PhotoTable \
-    SoundRecorder \
-    PhotoPhase
+    SoundRecorder
 
-# Extra tools in Bliss
+# Extra tools in Razer
 PRODUCT_PACKAGES += \
     vim \
     zip \

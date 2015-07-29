@@ -23,4 +23,4 @@ FRAMEWORK_CM_PLATFORM_REMOVED_API_FILE := $(TOPDIR)vendor/cmsdk/api/cm_removed.t
 FRAMEWORK_CM_PLATFORM_SYSTEM_API_FILE := $(TOPDIR)vendor/cmsdk/system-api/cm_system-current.txt
 FRAMEWORK_CM_PLATFORM_SYSTEM_REMOVED_API_FILE := $(TOPDIR)vendor/cmsdk/system-api/cm_system-removed.txt
 
-BUILD_MAVEN_PREBUILT := $(TOP)/vendor/bliss/build/core/maven_artifact.mk
+BUILD_MAVEN_PREBUILT := $(TOP)/vendor/razer/build/core/maven_artifact.mk

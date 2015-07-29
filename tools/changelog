@@ -2,9 +2,9 @@
 
 # Exports
 
-. $ANDROID_BUILD_TOP/vendor/bliss/tools/colors
+. $ANDROID_BUILD_TOP/vendor/razer/tools/colors
 
-export Changelog=CHANGELOG-bliss.txt
+export Changelog=CHANGELOG-razer.txt
 
 if [ -f $Changelog ];
 then

@@ -4,7 +4,7 @@
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/bliss/sepolicy
+    vendor/razer/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \

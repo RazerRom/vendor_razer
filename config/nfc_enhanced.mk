@@ -1,3 +1,3 @@
-# This device supports Bliss enhanced NFC
+# This device supports Razer enhanced NFC
 PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/com.bliss.nfc.enhanced.xml:system/etc/permissions/com.bliss.nfc.enhanced.xml
+    vendor/razer/config/permissions/com.razer.nfc.enhanced.xml:system/etc/permissions/com.razer.nfc.enhanced.xml

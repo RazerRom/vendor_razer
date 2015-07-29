@@ -1,8 +1,8 @@
-# Inherit common Bliss stuff
-$(call inherit-product, vendor/bliss/config/common.mk)
+# Inherit common Razer stuff
+$(call inherit-product, vendor/razer/config/common.mk)
 
-# Include Bliss audio files
-include vendor/bliss/config/bliss_audio.mk
+# Include RazerRom audio files
+include vendor/razer/config/razer_audio.mk
 
 # Required CM packages
 PRODUCT_PACKAGES += \
@@ -15,5 +15,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
-        vendor/bliss/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
+        vendor/razer/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
 endif
