@@ -1,7 +1,7 @@
 # Versioning System For RazerRom
 # Razer RELEASE VERSION
 RAZER_VERSION_MAJOR = 3
-RAZER_VERSION_MINOR = 7
+RAZER_VERSION_MINOR = 8
 RAZER_VERSION_MAINTENANCE =
 
 VERSION := $(RAZER_VERSION_MAJOR).$(RAZER_VERSION_MINOR)$(RAZER_VERSION_MAINTENANCE)
@@ -19,9 +19,9 @@ endif
 # Set Unofficial if no buildtype set (Buildtype should ONLY be set by Razer Devs!)
 ifdef RAZER_BUILDTYPE
 else
-    RAZER_BUILDTYPE := UNOFFICIAL
+    RAZER_BUILDTYPE := NIGHTLY
     RAZER_VERSION_MAJOR := 3
-    RAZER_VERSION_MINOR := 7
+    RAZER_VERSION_MINOR := 8
 endif
 
 # Set Razer version
