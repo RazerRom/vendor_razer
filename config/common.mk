@@ -315,10 +315,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.gservices_delay=-1 \
     net.tethering.noprovisioning=true \
     persist.sys.dun.override=0
-    dalvik.vm.profiler=1 \
-    dalvik.vm.isa.arm.features=lpae,div \
-    dalvik.vm.image-dex2oat-filter=everything \
-    dalvik.vm.dex2oat-filter=everything
 
 # CameraNextMod
 PRODUCT_COPY_FILES += \
