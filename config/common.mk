@@ -170,8 +170,7 @@ PRODUCT_PACKAGES += \
 # Other packages
 PRODUCT_PACKAGES += \
     KernelAdiutor \
-    OmniSwitch \
-    WallpaperPicker
+    OmniSwitch
 
 # Extra tools in RazerRom
 PRODUCT_PACKAGES += \
